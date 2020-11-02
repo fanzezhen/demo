@@ -1,0 +1,31 @@
+# IntelliJ Idea project files
+.idea
+*.iml
+*.uconf.properties
+*.logback.xml
+.mvn
+# Eclipse project files
+.classpath
+.settings
+.project
+.metadata
+# Gradle files
+.gradle/
+# Temporary files
+out
+build
+target
+conf_dev
+*.pyc
+*.conf
+*.temp
+#
+gradle
+# OSX temp files
+.DS_Store
+
+# DataBase
+*.rdb
+
+# log
+log/
