@@ -1,0 +1,96 @@
+#版本号
+version: "3"
+#服务
+services:
+  #服务名称
+  redis:
+    #镜像名: 仓库/标签:版本
+    image: redis:alpine
+    # 暴露端口信息
+    ports:
+      - "6379"
+
+  #服务名称
+  eureka-server:
+    #镜像名: 仓库/标签:版本
+    image: openjdk:11
+    container_name: eureka-server
+    restart: always
+    working_dir: /opt/app/
+    volumes:
+      - $PWD/eureka-server/:/opt/app/
+      - /etc/localtime:/etc/localtime:ro
+    entrypoint:
+      - java
+      - -Xmx512M
+      - -Djava.security.egd=file:/dev/./urandom
+      - -jar
+      - /opt/app/eureka-server.jar
+      - --env=test
+    network_mode: "host"
+    # 暴露端口信息
+    ports:
+      - "8761:8761"
+    # 添加环境变量.可以使用数组或字典两种形式
+    # 任何布尔值:true, false, yes, no 需要用引号括起来,以确保它们不被YAML解析器转换为True或False
+    environment:
+      RACK_ENV: development
+      SHOW: 'true'
+
+  #服务名称
+  log-web:
+    #镜像名: 仓库/标签:版本
+    image: openjdk:11
+    container_name: log-web
+    restart: always
+    working_dir: /opt/app/
+    volumes:
+      - $PWD/log-web/:/opt/app/
+      - /etc/localtime:/etc/localtime:ro
+    entrypoint:
+      - java
+      - -Xmx512M
+      - -Djava.security.egd=file:/dev/./urandom
+      - -jar
+      - /opt/app/sgst-open-base-pras.jar
+      - --env=test
+    network_mode: "host"
+    # 暴露端口信息
+    ports:
+      - "10001:10001"
+    # 添加环境变量.可以使用数组或字典两种形式
+    # 任何布尔值:true, false, yes, no 需要用引号括起来,以确保它们不被YAML解析器转换为True或False
+    environment:
+      RACK_ENV: development
+      SHOW: 'true'
+    depends_on:
+      - eureka-server
+
+  #服务名称
+  sys-web:
+    #镜像名: 仓库/标签:版本
+    image: openjdk:11
+    container_name: sys-web
+    restart: always
+    working_dir: /opt/app/
+    volumes:
+      - $PWD/sys-web/:/opt/app/
+      - /etc/localtime:/etc/localtime:ro
+    entrypoint:
+      - java
+      - -Xmx512M
+      - -Djava.security.egd=file:/dev/./urandom
+      - -jar
+      - /opt/app/sys-web.jar
+      - --env=test
+    network_mode: "host"
+    # 暴露端口信息
+    ports:
+      - "10002:10002"
+    # 添加环境变量.可以使用数组或字典两种形式
+    # 任何布尔值:true, false, yes, no 需要用引号括起来,以确保它们不被YAML解析器转换为True或False
+    environment:
+      RACK_ENV: development
+      SHOW: 'true'
+    depends_on:
+      - eureka-server

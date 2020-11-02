@@ -11,7 +11,7 @@ public interface SysPermissionServiceFacade {
      *
      * @return
      */
-    List<SysPermissionVo> listPermission();
+    List<SysPermissionVo> listAllPermission();
 
     /**
      * 获取角色下的所有权限
@@ -72,7 +72,7 @@ public interface SysPermissionServiceFacade {
      * @param appCode
      * @return
      */
-    List<SysPermissionVo> listPermission(@RequestParam("appCode") String appCode);
+    List<SysPermissionVo> listAllPermission(@RequestParam("appCode") String appCode);
 
     /**
      * 权限树

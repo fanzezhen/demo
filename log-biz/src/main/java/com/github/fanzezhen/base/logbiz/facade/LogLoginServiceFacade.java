@@ -6,6 +6,9 @@ import com.github.fanzezhen.base.logbiz.foundation.entity.LogLogin;
 import com.github.fanzezhen.base.logbiz.model.dto.LogLoginDto;
 import com.github.fanzezhen.base.logbiz.model.vo.LogLoginVo;
 
+/**
+ * @author zezhen.fan
+ */
 public interface LogLoginServiceFacade {
     boolean add(LogLoginDto logLoginDto);
     IPage<LogLoginVo> page(PageDto<LogLoginDto, LogLogin> pageDto);

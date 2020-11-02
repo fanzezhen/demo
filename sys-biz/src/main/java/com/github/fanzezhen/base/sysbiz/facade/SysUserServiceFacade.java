@@ -11,5 +11,6 @@ public interface SysUserServiceFacade {
 
     SysUserVo getById(String adminId);
     SysUserVo getByUserName(String username);
+    SysUserVo getByUserName(String username, String appCode);
     SysUserVo save(SysUserDto sysUserDto);
 }

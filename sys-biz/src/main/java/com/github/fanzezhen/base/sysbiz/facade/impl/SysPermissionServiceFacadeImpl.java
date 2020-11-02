@@ -40,7 +40,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     private ISysRolePermissionService sysRolePermissionService;
 
     @Override
-    public List<SysPermissionVo> listPermission() {
+    public List<SysPermissionVo> listAllPermission() {
         return toVo(sysPermissionService.list());
     }
 
@@ -147,7 +147,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     }
 
     @Override
-    public List<SysPermissionVo> listPermission(String appCode) {
+    public List<SysPermissionVo> listAllPermission(String appCode) {
         return toVo(sysPermissionService.list());
     }
 

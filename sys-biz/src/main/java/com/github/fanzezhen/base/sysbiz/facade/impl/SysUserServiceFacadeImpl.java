@@ -52,6 +52,12 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
     }
 
     @Override
+    public SysUserVo getByUserName(String username, String appCode) {
+        return toVo(sysUserService.getOne(
+                new LambdaQueryWrapper<SysUser>().eq(SysUser::getUsername, username).eq(SysUser::getAppCode, appCode)));
+    }
+
+    @Override
     public SysUserVo save(SysUserDto sysUserDto) {
         if (sysUserService.saveOrUpdate(sysUserDto) && !org.springframework.util.StringUtils.isEmpty(sysUserDto.getId()) &&
                 sysUserDto.getRoleIds() != null && sysUserDto.getRoleIds().size() > 0) {
