@@ -5,10 +5,8 @@ import com.github.fanzezhen.base.sysbiz.facade.SysUserServiceFacade;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysPermissionVo;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysUserVo;
 import com.github.fanzezhen.common.core.model.response.R;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,12 +21,13 @@ public class PublicController {
     private SysUserServiceFacade sysUserServiceFacade;
     @Resource
     private SysPermissionServiceFacade sysPermissionServiceFacade;
-    @GetMapping("/user/by/username")
+
+    @GetMapping(value = "/user/by/username", produces = MediaType.APPLICATION_JSON_VALUE)
     public R<SysUserVo> loadUserByUsername(@RequestParam("username") String username, @RequestParam("appCode") String appCode) {
         return R.ok(sysUserServiceFacade.getByUserName(username, appCode));
     }
 
-    @GetMapping("/permission/list")
+    @GetMapping(value = "/permission/list", produces = MediaType.APPLICATION_JSON_VALUE)
     public R<List<SysPermissionVo>> listPermission(@RequestParam("appCode") String appCode) {
         return R.ok(sysPermissionServiceFacade.listAllPermission(appCode));
     }

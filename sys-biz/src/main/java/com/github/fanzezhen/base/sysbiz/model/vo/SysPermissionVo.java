@@ -3,12 +3,13 @@ package com.github.fanzezhen.base.sysbiz.model.vo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @Accessors(chain = true)
-public class SysPermissionVo {
+public class SysPermissionVo implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * 主键

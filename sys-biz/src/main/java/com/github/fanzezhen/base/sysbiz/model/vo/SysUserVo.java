@@ -3,11 +3,15 @@ package com.github.fanzezhen.base.sysbiz.model.vo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
+/**
+ * @author zezhen.fan
+ */
 @Data
 @Accessors(chain = true)
-public class SysUserVo{
+public class SysUserVo implements Serializable {
     private String id;
 
     /**

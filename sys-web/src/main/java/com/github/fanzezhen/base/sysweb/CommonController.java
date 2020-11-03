@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
+/**
+ * @author zezhen.fan
+ */
 @Controller
 public class CommonController extends com.github.fanzezhen.base.sysweb.BaseController {
     @Resource
