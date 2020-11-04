@@ -6,6 +6,7 @@ import com.github.fanzezhen.common.core.model.dto.PageDto;
 import com.github.fanzezhen.base.logbiz.facade.LogLoginServiceFacade;
 import com.github.fanzezhen.base.logbiz.foundation.entity.LogLogin;
 import com.github.fanzezhen.base.logbiz.model.dto.LogLoginDto;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ import javax.annotation.Resource;
  * @author fanzezhen
  * @since 2020-06-11
  */
+@Api("登录日志")
 @Controller
 @RequestMapping("/log/login")
 public class LogLoginController {
