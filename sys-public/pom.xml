@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.fanzezhen.base</groupId>
-    <artifactId>log-web</artifactId>
+    <artifactId>sys-public</artifactId>
+    <version>1.0</version>
 
     <profiles>
         <profile>
@@ -36,15 +37,16 @@
         </profile>
     </profiles>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.github.fanzezhen.base</groupId>
-            <artifactId>log-biz</artifactId>
+            <artifactId>sys-biz</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-mp</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
@@ -70,19 +72,22 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-json</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-dependencies</artifactId>
             <version>${spring-cloud.version}</version>
             <type>pom</type>
             <scope>runtime</scope>
-
         </dependency>
         <!-- spring cloud Eureka Client 启动器，因为Eureka Server开启了安全校验，
     所有需要依赖更大范围的jar包资源spring-cloud-starter-eureka-server-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-eureka-server</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-eureka-server</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -97,7 +102,23 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 

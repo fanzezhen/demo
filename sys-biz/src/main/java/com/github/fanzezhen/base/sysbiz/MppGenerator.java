@@ -12,6 +12,13 @@ public class MppGenerator {
         String dbUsername = "root";
         String dbPassword = "root";
         String moduleParentName = "com.github.fanzezhen.common.mp.generator";
-        GeneratorTool.generator(new MysqlGenerator(dataSourceConfigUrl, dbUsername, dbPassword, moduleParentName));
+        GeneratorTool.generator(MysqlGenerator.builder().build()
+                .setAuthor("fanzezhen")
+                .setDataSourceConfigUrl(dataSourceConfigUrl)
+                .setDbUsername(dbUsername)
+                .setDbPassword(dbPassword)
+                .setSuperiorModuleNames("log-biz")
+                .setParentPackageName(moduleParentName)
+                .setSuperEntityClass(com.github.fanzezhen.common.core.model.entity.BaseVarEntity.class));
     }
 }

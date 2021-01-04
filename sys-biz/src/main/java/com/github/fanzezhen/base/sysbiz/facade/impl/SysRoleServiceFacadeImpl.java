@@ -62,12 +62,6 @@ public class SysRoleServiceFacadeImpl implements SysRoleServiceFacade {
     @Override
     public IPage<SysRoleVo> page(PageDto<SysRoleDto, SysRole> pageDto) {
         LambdaQueryWrapper<SysRole> queryWrapper = new LambdaQueryWrapper<>(pageDto.getParam());
-        if (!StringUtils.isEmpty(pageDto.getStartDate())) {
-            queryWrapper.ge(SysRole::getCreateTime, pageDto.getStartDate());
-        }
-        if (!StringUtils.isEmpty(pageDto.getEndDate())) {
-            queryWrapper.le(SysRole::getCreateTime, pageDto.getEndDate());
-        }
         if (!StringUtils.isEmpty(pageDto.getParam().getRoleName())) {
             queryWrapper.like(SysRole::getRoleName, pageDto.getParam().getRoleName());
         }

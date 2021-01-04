@@ -1,6 +1,8 @@
 package com.github.fanzezhen.base.sysbiz.facade.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.fanzezhen.common.core.SysContext;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
 import com.github.fanzezhen.common.core.enums.CommonEnum;
 import com.github.fanzezhen.common.core.enums.auth.PermissionEnum;
@@ -15,7 +17,6 @@ import com.github.fanzezhen.base.sysbiz.foundation.service.ISysRolePermissionSer
 import com.github.fanzezhen.base.sysbiz.foundation.service.ISysUserRoleService;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysPermissionVo;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysUserVo;
-import com.github.fanzezhen.common.security.util.SecurityUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -74,12 +75,12 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     public List<Object> listLoginUserPermissionId() {
         List<Object> permissionIdList = new ArrayList<>();
         // 获取security登录用户
-        org.springframework.security.core.userdetails.User user = SecurityUtil.getUser();
-        if (user == null) {
+        String userName = SysContext.getUserName();
+        if (StrUtil.isBlank(userName)) {
             return permissionIdList;
         }
         // 根据登录用户名查询用户
-        SysUserVo sysUserVo = sysUserServiceFacade.getByUserName(user.getUsername());
+        SysUserVo sysUserVo = sysUserServiceFacade.getByUserName(userName);
         if (sysUserVo == null) {
             return permissionIdList;
         }

@@ -1,4 +1,4 @@
-package com.github.fanzezhen.base.sysweb;
+package com.github.fanzezhen.base.syspublic;
 
 import com.github.fanzezhen.base.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.base.sysbiz.facade.SysUserServiceFacade;
@@ -6,7 +6,9 @@ import com.github.fanzezhen.base.sysbiz.model.vo.SysPermissionVo;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysUserVo;
 import com.github.fanzezhen.common.core.model.response.ActionResult;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,8 +17,7 @@ import java.util.List;
  * @author zezhen.fan
  */
 @RestController
-@RequestMapping("/public")
-public class PublicController {
+public class ApiController {
     @Resource
     private SysUserServiceFacade sysUserServiceFacade;
     @Resource

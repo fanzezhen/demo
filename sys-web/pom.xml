@@ -124,6 +124,8 @@
                 <includes>
                     <include>application.properties</include>
                     <include>application-${profiles.active}.properties</include>
+                    <include>bootstrap.properties</include>
+                    <include>bootstrap-${profiles.active}.properties</include>
                 </includes>
             </resource>
         </resources>

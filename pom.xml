@@ -14,13 +14,14 @@
         <module>log-web</module>
         <module>sys-biz</module>
         <module>sys-web</module>
+        <module>sys-public</module>
     </modules>
 
     <properties>
         <cn.stylefeng.roses.version>2.2.13</cn.stylefeng.roses.version>
-        <com.github.fanzezhen.version>2.0.3</com.github.fanzezhen.version>
+        <com.github.fanzezhen.common.version>2.0.5</com.github.fanzezhen.common.version>
         <com.alibaba.version>1.2.68</com.alibaba.version>
-        <com.baomidou.version>3.3.2</com.baomidou.version>
+        <com.baomidou.version>3.4.1</com.baomidou.version>
         <com.fasterxml.jackson.core.version>2.10.2</com.fasterxml.jackson.core.version>
         <com.google.code.gson.version>2.8.6</com.google.code.gson.version>
         <com.google.guava.version>29.0-jre</com.google.guava.version>
@@ -77,22 +78,22 @@
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-core</artifactId>
-                <version>${com.github.fanzezhen.version}</version>
+                <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-mp</artifactId>
-                <version>${com.github.fanzezhen.version}</version>
+                <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-security</artifactId>
-                <version>${com.github.fanzezhen.version}</version>
+                <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-swagger</artifactId>
-                <version>${com.github.fanzezhen.version}</version>
+                <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <!--common-->
             <dependency>

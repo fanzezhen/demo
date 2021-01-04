@@ -1,4 +1,4 @@
-package com.github.fanzezhen.base.logweb;
+package com.github.fanzezhen.base.logweb.controller;
 
 
 import cn.stylefeng.roses.kernel.model.response.ResponseData;

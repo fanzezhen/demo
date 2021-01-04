@@ -30,14 +30,12 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
 
     @Override
     public IPage<SysUserVo> page(PageDto<SysUserDto, SysUser> pageDto) {
-        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>(pageDto.getParam());
+        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>(pageDto.getParam());
         if (!StringUtils.isEmpty(pageDto.getParam().getUsername())) {
-            queryWrapper.like("username", pageDto.getParam().getUsername());
+            queryWrapper.like(SysUser::getUsername, pageDto.getParam().getUsername());
         }
         pageDto.getParam().setUsername(null);
-        if (!StringUtils.isEmpty(pageDto.getStartDate())) queryWrapper.ge("create_time", pageDto.getStartDate());
-        if (!StringUtils.isEmpty(pageDto.getEndDate())) queryWrapper.le("create_time", pageDto.getEndDate());
-        queryWrapper.orderByDesc("update_time");
+        queryWrapper.orderByDesc(SysUser::getUpdateTime);
         return sysUserService.page(pageDto, queryWrapper).convert(this::toVo);
     }
 
@@ -75,7 +73,9 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
     }
 
     private SysUserVo toVo(SysUser sysUser) {
-        if (sysUser == null) return null;
+        if (sysUser == null) {
+            return null;
+        }
         return BeanConverterUtil.copy(sysUser, new SysUserVo());
     }
 }
