@@ -1,6 +1,6 @@
 package com.github.fanzezhen.base.sysweb;
 
-import com.github.fanzezhen.common.core.util.SysUtil;
+import com.github.fanzezhen.common.core.util.SysServerInfoUtil;
 import com.github.fanzezhen.base.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.common.security.util.SecurityUtil;
 import org.springframework.stereotype.Controller;
@@ -20,19 +20,19 @@ public class CommonController extends com.github.fanzezhen.base.sysweb.BaseContr
 
     @GetMapping("/")
     public String empty() {
-        return "redirect:/index";
+        return "redirect:/home";
     }
 
-    @GetMapping("/index")
-    public String index(ModelMap modelMap) {
+    @GetMapping("/home")
+    public String indexView(ModelMap modelMap) {
         modelMap.addAttribute("permissionList", sysPermissionServiceFacade.listMenuPermissionByUserId(SecurityUtil.getLoginUserId()));
         return "index";
     }
 
-    @GetMapping("/welcome")
-    public String welcome(ModelMap modelMap) {
+    @GetMapping("/welcome/view")
+    public String welcomeView(ModelMap modelMap) {
         modelMap.addAttribute("javaVersion", System.getProperty("java.version") + " " + System.getProperty("java.vm.name"));
-        modelMap.addAttribute("diskRating", SysUtil.getDiskRating());
+        modelMap.addAttribute("diskRating", SysServerInfoUtil.getDiskRating());
         return "welcome";
     }
 

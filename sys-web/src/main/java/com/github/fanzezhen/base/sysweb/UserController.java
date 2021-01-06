@@ -22,6 +22,9 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author zezhen.fan
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController extends BaseController {
@@ -75,6 +78,7 @@ public class UserController extends BaseController {
     @ResponseBody
     @BizLog(value = "新增用户", struct = SysUserBizLogStruct.class)
     public ResponseData add(@RequestBody SysUserDto sysUserDto) {
+        sysUserDto.setId(null);
         sysUserDto.setPassword(SecurityUtil.encrypt(CommonConstant.DEFAULT_USER_PASSWORD));
         return ResponseData.success(sysUserServiceFacade.save(sysUserDto));
     }

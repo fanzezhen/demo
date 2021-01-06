@@ -5,6 +5,9 @@ import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author zezhen.fan
+ */
 @Data
 @Accessors(chain = true)
 public class SysRoleVo {

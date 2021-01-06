@@ -7,13 +7,16 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+/**
+ * @author zezhen.fan
+ */
 @Component
 public class LogExceptionServiceFacadeImpl implements LogExceptionServiceFacade {
     @Resource
-    private ILogExceptionService LogExceptionService;
+    private ILogExceptionService logExceptionService;
 
     @Override
-    public boolean add(LogExceptionDto LogExceptionDto) {
-        return LogExceptionService.save(LogExceptionDto);
+    public boolean add(LogExceptionDto logExceptionDto) {
+        return logExceptionService.save(logExceptionDto);
     }
 }

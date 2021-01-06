@@ -7,6 +7,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * @author zezhen.fan
+ */
 @Data
 @Accessors(chain = true)
 public class SysPermissionVo implements Serializable {

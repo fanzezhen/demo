@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author zezhen.fan
+ */
 @Data
 public class LogLoginVo {
     private String id;

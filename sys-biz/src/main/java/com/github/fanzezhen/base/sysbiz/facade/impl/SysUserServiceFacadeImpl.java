@@ -14,12 +14,16 @@ import com.github.fanzezhen.base.sysbiz.model.dto.SysUserDto;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysUserVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author zezhen.fan
+ */
 @Slf4j
 @Service
 public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
@@ -40,8 +44,8 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
     }
 
     @Override
-    public SysUserVo getById(String adminId) {
-        return toVo(sysUserService.getById(adminId));
+    public SysUserVo getById(String id) {
+        return toVo(sysUserService.getById(id));
     }
 
     @Override
@@ -56,6 +60,7 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
     }
 
     @Override
+    @Transactional(rollbackFor = Throwable.class)
     public SysUserVo save(SysUserDto sysUserDto) {
         if (sysUserService.saveOrUpdate(sysUserDto) && !org.springframework.util.StringUtils.isEmpty(sysUserDto.getId()) &&
                 sysUserDto.getRoleIds() != null && sysUserDto.getRoleIds().size() > 0) {

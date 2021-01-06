@@ -2,8 +2,8 @@ package com.github.fanzezhen.base.sysbiz.facade.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.github.fanzezhen.common.core.SysContext;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
+import com.github.fanzezhen.common.core.context.SysContext;
 import com.github.fanzezhen.common.core.enums.CommonEnum;
 import com.github.fanzezhen.common.core.enums.auth.PermissionEnum;
 import com.github.fanzezhen.common.core.util.BeanConverterUtil;

@@ -23,12 +23,12 @@ import javax.annotation.Resource;
 @RequestMapping("/log/exception")
 public class LogExceptionController {
     @Resource
-    private LogExceptionServiceFacade LogExceptionServiceFacade;
+    private LogExceptionServiceFacade logExceptionServiceFacade;
 
     @ResponseBody
     @PostMapping("/record")
-    public ResponseData record(LogExceptionDto LogExceptionDto) {
-        return ResponseData.success(LogExceptionServiceFacade.add(LogExceptionDto));
+    public ResponseData record(LogExceptionDto logExceptionDto) {
+        return ResponseData.success(logExceptionServiceFacade.add(logExceptionDto));
     }
 
 }

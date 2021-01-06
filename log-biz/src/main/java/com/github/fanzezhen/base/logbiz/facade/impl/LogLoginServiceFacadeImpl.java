@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+/**
+ * @author zezhen.fan
+ */
 @Component
 public class LogLoginServiceFacadeImpl implements LogLoginServiceFacade {
     @Resource
@@ -27,7 +30,9 @@ public class LogLoginServiceFacadeImpl implements LogLoginServiceFacade {
         return logLoginService.page(pageDto).convert(this::toVo);
     }
     private LogLoginVo toVo(LogLogin logLogin) {
-        if (logLogin == null) return null;
+        if (logLogin == null) {
+            return null;
+        }
         return BeanConverterUtil.copy(logLogin, new LogLoginVo());
     }
 }

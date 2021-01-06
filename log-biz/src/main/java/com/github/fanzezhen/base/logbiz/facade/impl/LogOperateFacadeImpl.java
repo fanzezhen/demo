@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Collection;
 
+/**
+ * @author zezhen.fan
+ */
 @Service
 public class LogOperateFacadeImpl implements LogOperateFacade {
     @Resource

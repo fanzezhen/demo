@@ -44,8 +44,20 @@
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-log</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
             <artifactId>common-swagger</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.fanzezhen.common</groupId>-->
+<!--            <artifactId>common-web</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
@@ -114,6 +126,27 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+        <!--thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -126,6 +159,8 @@
                     <include>application-${profiles.active}.properties</include>
                     <include>bootstrap.properties</include>
                     <include>bootstrap-${profiles.active}.properties</include>
+                    <include>static/</include>
+                    <include>templates/</include>
                 </includes>
             </resource>
         </resources>

@@ -22,8 +22,6 @@ public class SysUser extends BaseVarEntity {
 
     private static final long serialVersionUID = 1L;
 
-    private String id;
-
     /**
      * 用户名
      */
@@ -80,19 +78,9 @@ public class SysUser extends BaseVarEntity {
     private LocalDateTime lastTime;
 
     /**
-     * 注册时间
-     */
-    private LocalDateTime createTime;
-
-    /**
      * 更新时间
      */
     private LocalDateTime updateTime;
-
-    /**
-     * 填表人ID
-     */
-    private String createUserId;
 
     /**
      * 最后更新人ID
