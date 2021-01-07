@@ -1,5 +1,10 @@
 package com.github.fanzezhen.base.sysweb;
 
+import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
+import com.github.fanzezhen.common.mp.config.EnableCommonMpConfig;
+import com.github.fanzezhen.common.security.config.cas.EnableCommonSecurityCasConfig;
+import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
+import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +23,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author zezhen.fan
  */
+@EnableCommonLogConfig
+@EnableCommonMpConfig
+@EnableCommonSecurityCasConfig
+@EnableCommonSwaggerConfig
+@EnableCommonWebConfig
 @EnableScheduling
 @EnableTransactionManagement
 @Slf4j
@@ -25,8 +35,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient
 @MapperScan({"com.github.fanzezhen.base.sysbiz.foundation.mapper", "com.github.fanzezhen.common.*.foundation.mapper"})
 @EntityScan({"com.github.fanzezhen.base.sysbiz.foundation.entry", "com.github.fanzezhen.common.*.foundation.entity"})
-@SpringBootApplication(scanBasePackages = {"com.github.fanzezhen"})
-@EnableFeignClients(basePackages = {"com.github.fanzezhen"})
+@SpringBootApplication(scanBasePackages = {"com.github.fanzezhen.base"})
+@EnableFeignClients(basePackages = {"com.github.fanzezhen.base"})
 @Import(cn.hutool.extra.spring.SpringUtil.class)
 public class SysWebApplication {
     public static void main(String[] args) {

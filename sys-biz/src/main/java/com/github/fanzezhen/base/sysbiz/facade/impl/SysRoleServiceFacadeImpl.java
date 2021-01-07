@@ -2,7 +2,7 @@ package com.github.fanzezhen.base.sysbiz.facade.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.github.fanzezhen.common.core.enums.CommonEnum;
+import com.github.fanzezhen.common.core.enums.db.DelFlagEnum;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
 import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.base.sysbiz.facade.SysRoleServiceFacade;
@@ -41,7 +41,7 @@ public class SysRoleServiceFacadeImpl implements SysRoleServiceFacade {
     @Override
     public List<SysRoleVo> listValid() {
         return toVo(sysRoleService.list(new LambdaQueryWrapper<SysRole>()
-                .eq(SysRole::getDelFlag, CommonEnum.DeleteFlagEnum.NO.getCode())));
+                .eq(SysRole::getDelFlag, DelFlagEnum.NOT_DELETED.code)));
     }
 
     @Override

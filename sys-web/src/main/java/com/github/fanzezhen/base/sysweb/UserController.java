@@ -3,7 +3,7 @@ package com.github.fanzezhen.base.sysweb;
 import cn.stylefeng.roses.kernel.model.response.ResponseData;
 import com.github.fanzezhen.common.core.annotion.BizLog;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
-import com.github.fanzezhen.common.core.enums.auth.PermissionEnum;
+import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
 import com.github.fanzezhen.common.core.struct.SysUserBizLogStruct;
 import com.github.fanzezhen.base.sysbiz.facade.*;
@@ -104,7 +104,7 @@ public class UserController extends BaseController {
     }
 
     @GetMapping("/role/edit")
-    public String roleEdit(@RequestParam(required = true) String roleId, ModelMap modelMap) {
+    public String roleEdit(@RequestParam() String roleId, ModelMap modelMap) {
         modelMap.addAttribute("sysRole", sysRoleServiceFacade.getById(roleId));
         modelMap.addAttribute("title", "修改角色");
         modelMap.addAttribute("permissionIdList", sysPermissionServiceFacade.listPermissionByRoleId(roleId));
@@ -142,7 +142,7 @@ public class UserController extends BaseController {
 
     @GetMapping("/rule")
     public String ruleList(ModelMap modelMap) {
-        modelMap.addAttribute("typeList", PermissionEnum.PermissionTypeEnum.values());
+        modelMap.addAttribute("typeList", PermissionTypeEnum.values());
         return "user/user-rule";
     }
 
@@ -156,7 +156,7 @@ public class UserController extends BaseController {
     public String ruleEdit(ModelMap modelMap) {
         modelMap.addAttribute("sysRule", new SysPermission());
         modelMap.addAttribute("sysRuleList", new ArrayList<>());
-        modelMap.addAttribute("typeList", PermissionEnum.PermissionTypeEnum.values());
+        modelMap.addAttribute("typeList", PermissionTypeEnum.values());
         modelMap.addAttribute("title", "添加");
         return "user/rule-edit";
     }

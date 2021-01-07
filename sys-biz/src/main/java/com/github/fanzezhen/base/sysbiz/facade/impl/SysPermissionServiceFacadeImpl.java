@@ -4,8 +4,8 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
 import com.github.fanzezhen.common.core.context.SysContext;
-import com.github.fanzezhen.common.core.enums.CommonEnum;
-import com.github.fanzezhen.common.core.enums.auth.PermissionEnum;
+import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
+import com.github.fanzezhen.common.core.enums.db.DelFlagEnum;
 import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.base.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.base.sysbiz.facade.SysUserServiceFacade;
@@ -118,7 +118,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         }
         // 根据权限ID集合查询权限集合
         sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getType, PermissionEnum.PermissionTypeEnum.MENU.getType())
+                .eq(SysPermission::getType, PermissionTypeEnum.MENU.getType())
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum)));
         return sysPermissionVoList;
@@ -141,7 +141,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         }
         // 根据权限ID集合查询权限集合
         sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getType, PermissionEnum.PermissionTypeEnum.MENU.getType())
+                .eq(SysPermission::getType, PermissionTypeEnum.MENU.getType())
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum)));
         return sysPermissionVoList;
@@ -155,7 +155,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     @Override
     public List<SysPermissionVo> listPermissionTree() {
         LambdaQueryWrapper<SysPermission> sysPermissionQueryWrapper = new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getDelFlag, CommonEnum.DeleteFlagEnum.NO.getCode());
+                .eq(SysPermission::getDelFlag, DelFlagEnum.NOT_DELETED.code);
         return initPermissionTree(CommonConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
     }
 
@@ -171,7 +171,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         }
         // 根据权限ID集合查询权限集合
         LambdaQueryWrapper<SysPermission> sysPermissionQueryWrapper = new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getDelFlag, CommonEnum.DeleteFlagEnum.NO.getCode())
+                .eq(SysPermission::getDelFlag, DelFlagEnum.NOT_DELETED.code)
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum);
         return initPermissionTree(CommonConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
