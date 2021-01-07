@@ -51,6 +51,10 @@
             <artifactId>common-swagger</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
         </dependency>

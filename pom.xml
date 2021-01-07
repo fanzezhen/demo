@@ -105,6 +105,11 @@
                 <artifactId>common-swagger</artifactId>
                 <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.fanzezhen.common</groupId>
+                <artifactId>common-web</artifactId>
+                <version>${com.github.fanzezhen.common.version}</version>
+            </dependency>
             <!--common-->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>

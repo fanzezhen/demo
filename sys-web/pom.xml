@@ -44,6 +44,10 @@
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
             <artifactId>common-log</artifactId>
         </dependency>
         <dependency>
