@@ -21,6 +21,7 @@
     <properties>
         <app.server>-tomcat</app.server>
         <com.github.fanzezhen.common.version>2.0.5</com.github.fanzezhen.common.version>
+        <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
         <cn.hutool.version>5.4.7</cn.hutool.version>
         <cn.stylefeng.roses.version>2.2.13</cn.stylefeng.roses.version>
         <com.alibaba.version>1.2.68</com.alibaba.version>
@@ -28,8 +29,10 @@
         <com.fasterxml.jackson.core.version>2.12.0</com.fasterxml.jackson.core.version>
         <com.fasterxml.jackson.datatype.version>2.11.2</com.fasterxml.jackson.datatype.version>
         <com.google.code.gson.version>2.8.6</com.google.code.gson.version>
+        <com.github.penggle.version>2.3.2</com.github.penggle.version>
         <com.google.guava.version>29.0-jre</com.google.guava.version>
         <com.oracle.version>11.2.0.3</com.oracle.version>
+        <com.zaxxer.version>3.4.5</com.zaxxer.version>
         <commons-net.version>3.6</commons-net.version>
         <eu.bitwalker.version>1.21</eu.bitwalker.version>
         <io.jsonwebtoken.version>0.9.1</io.jsonwebtoken.version>
@@ -90,12 +93,22 @@
             </dependency>
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
+                <artifactId>common-exception</artifactId>
+                <version>${com.github.fanzezhen.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-log</artifactId>
                 <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.fanzezhen.common</groupId>
                 <artifactId>common-mp</artifactId>
+                <version>${com.github.fanzezhen.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fanzezhen.common</groupId>
+                <artifactId>common-redis</artifactId>
                 <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <dependency>
@@ -114,6 +127,21 @@
                 <version>${com.github.fanzezhen.common.version}</version>
             </dependency>
             <!--common-->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${ch.qos.logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${cn.hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${cn.hutool.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
@@ -135,9 +163,24 @@
                 <version>${com.google.code.gson.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${com.zaxxer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>1.5.24</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax.servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -156,44 +199,15 @@
                 <version>${com.baomidou.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
-                <version>${org.mybatis.spring.boot.version}</version>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
             </dependency>
             <!--mysql-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
-            </dependency>
-            <!-- org.apereo.cas -->
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-jdbc</artifactId>
-                <version>${org.apereo.cas.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-jdbc-authentication</artifactId>
-                <version>${org.apereo.cas.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-jdbc-drivers</artifactId>
-                <version>${org.apereo.cas.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-support-jpa-service-registry</artifactId>
-                <version>${org.apereo.cas.version}</version>
-            </dependency>
-            <!-- 和maven-war-plugin里配置的overlays配合使用（CAS） -->
-            <dependency>
-                <groupId>org.apereo.cas</groupId>
-                <artifactId>cas-server-webapp${app.server}</artifactId>
-                <version>${org.apereo.cas.version}</version>
-                <type>war</type>
-                <scope>runtime</scope>
             </dependency>
 
             <dependency>
@@ -216,6 +230,81 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${io.springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.lingala.zip4j</groupId>
+                <artifactId>zip4j</artifactId>
+                <version>${net.lingala.zip4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${org.apache.poi.version}</version>
+            </dependency>
+            <!-- org.apereo.cas -->
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-authentication-api</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-authentication-attributes</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-webflow</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-webflow-api</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-web-api</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-support-jdbc</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-support-jdbc-authentication</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-support-jdbc-drivers</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-support-jpa-service-registry</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-core-services-api</artifactId>
+                <version>${org.apereo.cas.version}</version>
+            </dependency>
+            <!-- 和maven-war-plugin里配置的overlays配合使用（CAS） -->
+            <dependency>
+                <groupId>org.apereo.cas</groupId>
+                <artifactId>cas-server-webapp${app.server}</artifactId>
+                <version>${org.apereo.cas.version}</version>
+                <type>war</type>
+                <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+                <version>${org.mybatis.spring.boot.version}</version>
             </dependency>
             <!--spring-->
             <dependency>
@@ -307,6 +396,91 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${org.springframework.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${com.fasterxml.jackson.datatype.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${org.slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${javax.persistence.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibaba.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${com.baomidou.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${com.baomidou.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${com.google.guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${eu.bitwalker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${io.jsonwebtoken.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${org.apache.commons.commons-beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${org.apache.commons.commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${org.apache.poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${com.baomidou.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${org.apache.velocity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${org.aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${org.freemarker.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -408,6 +582,17 @@
                 <groupId>org.thymeleaf.extras</groupId>
                 <artifactId>thymeleaf-extras-springsecurity5</artifactId>
                 <version>${org.thymeleaf.extras.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.clients.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${com.github.penggle.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

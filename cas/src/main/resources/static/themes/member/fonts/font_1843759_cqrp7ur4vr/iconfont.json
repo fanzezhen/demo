@@ -1,0 +1,51 @@
+{
+  "id": "1843759",
+  "name": "sgstAdmin",
+  "font_family": "layui-icon",
+  "css_prefix_text": "",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15063436",
+      "name": "edit-blue2",
+      "font_class": "edit-blue2",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "15063425",
+      "name": "admin-exit",
+      "font_class": "admin-exit",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "15063414",
+      "name": "admin-delete",
+      "font_class": "admin-delete",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "15063386",
+      "name": "admin-view",
+      "font_class": "admin-view",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "15063340",
+      "name": "edit-blue",
+      "font_class": "edit-blue",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14976754",
+      "name": "adminmenu",
+      "font_class": "adminMenu",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

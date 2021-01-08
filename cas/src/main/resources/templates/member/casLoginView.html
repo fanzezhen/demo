@@ -1,0 +1,89 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="zh">
+<head>
+    <meta http-equiv="Content-Type" charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" th:href="@{/themes/member/lib/bootstrap/bootstrap-3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/themes/member/css/login/login.css}"/>
+    <script type="text/javascript" charset="UTF-8" th:src="@{/themes/member/js/jquery.min.js}"></script>
+    <script type="text/javascript" charset="UTF-8" th:src="@{/themes/member/js/login/login.js}"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" charset="UTF-8" th:src="@{/themes/member/js/html5.min.js}"></script>
+    <script type="text/javascript" charset="UTF-8" th:src="@{/themes/member/js/respond.min.js}"></script>
+    <![endif]-->
+    <title>登录</title>
+    <META name="GENERATOR" content="MSHTML 11.00.9600.17496">
+</head>
+<body>
+<div class="top_div"></div>
+<!--/*@thymesVar id="credential" type=""*/-->
+<form th:object="${credential}" th:action="@{/login}" method="post">
+    <div style="background: rgb(255, 255, 255);
+                margin: -100px auto auto;
+                border: 1px solid rgb(231, 231, 231);
+                border-image: none;
+                width: 400px;
+                height: 260px;
+                text-align: center;">
+        <div style="width: 165px; height: 96px; position: absolute;">
+            <div class="tou"></div>
+            <div class="initial_left_hand" id="left_hand"></div>
+            <div class="initial_right_hand" id="right_hand"></div>
+        </div>
+        <P style="padding: 30px 0 10px; position: relative;">
+            <span class="u_logo"></span>
+            <label for="username"></label>
+            <!--/*@thymesVar id="username" type="java.lang.String"*/-->
+            <input id="username" name="username" class="ipt" type="text" placeholder="登录名" th:value="${username}"/>
+        </P>
+        <P style="position: relative;">
+            <span class="p_logo"></span>
+            <!--/*@thymesVar id="password" type="java.lang.String"*/-->
+            <label for="password"></label>
+            <INPUT id="password"
+                   class="ipt"
+                   type="password"
+                   name="password"
+                   placeholder="请输入密码"
+                   onfocus="passwordWriting()"
+                   onblur="passwordWritten()"
+                   th:value="${password}">
+        </P>
+        <p style="position: relative;">
+            <label for="captcha"></label>
+            <input id="captcha" name="captcha" placeholder="验证码" class="ipt_vc" type="text"/>
+            <img th:src="@{/captcha/image-code}" alt=""/>
+        </p>
+        <div th:if="${#fields.hasErrors('*')}" style="color: red;">
+            <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"></span>
+        </div>
+        <section>
+            <!--/*@thymesVar id="flowExecutionKey" type="java.lang.String"*/-->
+            <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
+            <input type="hidden" name="_eventId" value="submit"/>
+            <input type="hidden" name="geolocation"/>
+            <input class="btn btn-submit btn-block btn_login"
+                   style="width:80%; margin:auto; text-align: center;"
+                   name="submit"
+                   accesskey="l"
+                   th:value="#{screen.welcome.button.login}"
+                   tabindex="6"
+                   type="submit"/>
+        </section>
+        <div class="div_btn_login" style="display: none">
+            <p style="margin: 0 35px 20px 45px;">
+                <span style="float: left; margin: 1.2vh 0 0 0; ">
+                    <a style="color: rgb(204, 204, 204);" href="#">忘记密码?</a>
+                </span>
+                <span style="float: right; margin: 0.5vh 0 0 0; ">
+                    <a type="button" class="register_a" th:href="@{/register}">注册</a>
+                    <input type="submit" class="btn_login" value="登录"/>
+                </span>
+            </p>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
