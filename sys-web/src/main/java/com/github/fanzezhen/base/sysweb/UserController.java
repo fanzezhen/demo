@@ -74,6 +74,13 @@ public class UserController extends BaseController {
         return ResponseData.success(sysUserServiceFacade.save(sysUserDto));
     }
 
+    @PostMapping("/save/batch")
+    @ResponseBody
+    @BizLog(value = "保存用户", struct = SysUserBizLogStruct.class)
+    public ResponseData saveBatch(@RequestBody List<SysUserDto> sysUserDtoList) {
+        return ResponseData.success(sysUserServiceFacade.saveBatch(sysUserDtoList));
+    }
+
     @PostMapping("/add")
     @ResponseBody
     @BizLog(value = "新增用户", struct = SysUserBizLogStruct.class)

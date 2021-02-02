@@ -6,6 +6,8 @@ import com.github.fanzezhen.base.sysbiz.model.dto.SysUserDto;
 import com.github.fanzezhen.base.sysbiz.model.vo.SysUserVo;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
 
+import java.util.List;
+
 /**
  * @author zezhen.fan
  */
@@ -50,4 +52,12 @@ public interface SysUserServiceFacade {
      * @return 用户信息
      */
     SysUserVo save(SysUserDto sysUserDto);
+
+    /**
+     * 保存
+     *
+     * @param sysUserDtoList 用户信息
+     * @return 用户信息
+     */
+    List<SysUserVo> saveBatch(List<SysUserDto> sysUserDtoList);
 }

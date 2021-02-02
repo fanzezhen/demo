@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.util.Collection;
+import java.util.Set;
 
 /**
  * @author zezhen.fan
@@ -17,8 +17,8 @@ import java.util.Collection;
 @Accessors(chain = true)
 @OperateLog(dictClass = SysUserDict.class, tableName = "sys_user")
 public class SysUserDto extends SysUser {
-    private Collection<String> roleNames;
-    private Collection<String> roleIds;
-    private Collection<Integer> roleTypes;
+    private Set<String> roleNames;
+    private Set<String> roleIds;
+    private Set<Integer> roleTypes;
 
 }
