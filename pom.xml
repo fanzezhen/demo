@@ -20,7 +20,7 @@
 
     <properties>
         <app.server>-tomcat</app.server>
-        <com.github.fanzezhen.common.version>2.0.5</com.github.fanzezhen.common.version>
+        <com.github.fanzezhen.common.version>2.0.7</com.github.fanzezhen.common.version>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
         <cn.hutool.version>5.4.7</cn.hutool.version>
         <cn.stylefeng.roses.version>2.2.13</cn.stylefeng.roses.version>
@@ -39,7 +39,7 @@
         <io.springfox.version>3.0.0</io.springfox.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <javax.servlet.version>4.0.1</javax.servlet.version>
-        <javax.persistence.version>1.0.2</javax.persistence.version>
+        <javax.persistence.version>2.2</javax.persistence.version>
         <nz.net.ultraq.thymeleaf.version>2.4.1</nz.net.ultraq.thymeleaf.version>
         <mysql.version>8.0.20</mysql.version>
         <net.lingala.zip4j.version>2.6.2</net.lingala.zip4j.version>
@@ -409,7 +409,7 @@
             </dependency>
             <dependency>
                 <groupId>javax.persistence</groupId>
-                <artifactId>persistence-api</artifactId>
+                <artifactId>javax.persistence-api</artifactId>
                 <version>${javax.persistence.version}</version>
             </dependency>
             <dependency>
@@ -624,7 +624,7 @@
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -636,7 +636,7 @@
         <repository>
             <id>public</id>
             <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -649,7 +649,7 @@
         <pluginRepository>
             <id>public</id>
             <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
