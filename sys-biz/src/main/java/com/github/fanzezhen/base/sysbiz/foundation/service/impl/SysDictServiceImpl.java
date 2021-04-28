@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 系统字典表 服务实现类
+ * 字典 服务实现类
  * </p>
  *
  * @author fanzezhen
- * @since 2020-05-08
+ * @since 2021-04-28
  */
 @Service
 public class SysDictServiceImpl extends ServiceImpl<SysDictMapper, SysDict> implements ISysDictService {

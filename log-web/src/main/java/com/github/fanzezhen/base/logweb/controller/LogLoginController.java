@@ -1,11 +1,12 @@
 package com.github.fanzezhen.base.logweb.controller;
 
 
-import cn.stylefeng.roses.kernel.model.response.ResponseData;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
 import com.github.fanzezhen.base.logbiz.facade.LogLoginServiceFacade;
-import com.github.fanzezhen.base.logbiz.foundation.entity.LogLogin;
-import com.github.fanzezhen.base.logbiz.model.dto.LogLoginDto;
+import com.github.fanzezhen.common.log.foundation.entity.LogLogin;
+import com.github.fanzezhen.common.log.model.dto.LogLoginDto;
+import com.github.fanzezhen.common.log.model.vo.LogLoginVo;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,9 +30,9 @@ public class LogLoginController {
     private LogLoginServiceFacade logLoginServiceFacade;
 
     @ResponseBody
-    @PostMapping("/record")
-    public ResponseData record(LogLoginDto logLoginDto) {
-        return ResponseData.success(logLoginServiceFacade.add(logLoginDto));
+    @PostMapping("/add")
+    public boolean add(LogLoginDto logLoginDto) {
+        return logLoginServiceFacade.add(logLoginDto);
     }
 
     @GetMapping("/page")
@@ -41,8 +42,8 @@ public class LogLoginController {
 
     @ResponseBody
     @PostMapping("/page")
-    public ResponseData page(@RequestBody PageDto<LogLoginDto, LogLogin> page) {
-        return ResponseData.success(logLoginServiceFacade.page(page));
+    public IPage<LogLoginVo> page(@RequestBody PageDto<LogLoginDto, LogLogin> page) {
+        return logLoginServiceFacade.page(page);
     }
 
 }

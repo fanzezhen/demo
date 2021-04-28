@@ -1,6 +1,6 @@
 package com.github.fanzezhen.base.logbiz.facade;
 
-import com.github.fanzezhen.base.logbiz.model.dto.LogExceptionDto;
+import com.github.fanzezhen.common.log.model.dto.LogExceptionDto;
 
 /**
  * @author zezhen.fan

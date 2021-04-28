@@ -118,7 +118,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         }
         // 根据权限ID集合查询权限集合
         sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getType, PermissionTypeEnum.MENU.getType())
+                .eq(SysPermission::getPermissionType, PermissionTypeEnum.MENU.getType())
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum)));
         return sysPermissionVoList;
@@ -141,7 +141,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         }
         // 根据权限ID集合查询权限集合
         sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getType, PermissionTypeEnum.MENU.getType())
+                .eq(SysPermission::getPermissionType, PermissionTypeEnum.MENU.getType())
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum)));
         return sysPermissionVoList;

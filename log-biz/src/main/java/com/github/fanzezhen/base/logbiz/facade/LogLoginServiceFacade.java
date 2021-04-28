@@ -2,9 +2,9 @@ package com.github.fanzezhen.base.logbiz.facade;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
-import com.github.fanzezhen.base.logbiz.foundation.entity.LogLogin;
-import com.github.fanzezhen.base.logbiz.model.dto.LogLoginDto;
-import com.github.fanzezhen.base.logbiz.model.vo.LogLoginVo;
+import com.github.fanzezhen.common.log.foundation.entity.LogLogin;
+import com.github.fanzezhen.common.log.model.dto.LogLoginDto;
+import com.github.fanzezhen.common.log.model.vo.LogLoginVo;
 
 /**
  * @author zezhen.fan

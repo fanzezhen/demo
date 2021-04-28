@@ -1,7 +1,7 @@
 package com.github.fanzezhen.base.logbiz;
 
-import com.github.fanzezhen.common.mp.generator.GeneratorTool;
-import com.github.fanzezhen.common.mp.generator.MysqlGenerator;
+import com.github.fanzezhen.common.core.generator.GeneratorTool;
+import com.github.fanzezhen.common.core.generator.MysqlGenerator;
 
 /**
  * @author zezhen.fan

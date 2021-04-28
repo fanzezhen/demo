@@ -44,11 +44,11 @@
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-mp</artifactId>
+            <artifactId>common-swagger</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-swagger</artifactId>
+            <artifactId>common-exception</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>

@@ -1,7 +1,7 @@
 package com.github.fanzezhen.base.sysbiz;
 
-import com.github.fanzezhen.common.mp.generator.GeneratorTool;
-import com.github.fanzezhen.common.mp.generator.MysqlGenerator;
+import com.github.fanzezhen.common.core.generator.GeneratorTool;
+import com.github.fanzezhen.common.core.generator.MysqlGenerator;
 
 /**
  * @author zezhen.fan
@@ -11,7 +11,7 @@ public class MppGenerator {
         String dataSourceConfigUrl = "jdbc:mysql://localhost:3306/edc?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
         String dbUsername = "root";
         String dbPassword = "root";
-        String moduleParentName = "com.github.fanzezhen.common.mp.generator";
+        String moduleParentName = "com.github.fanzezhen.common.core.generator";
         GeneratorTool.generator(MysqlGenerator.builder().build()
                 .setAuthor("fanzezhen")
                 .setDataSourceConfigUrl(dataSourceConfigUrl)

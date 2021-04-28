@@ -1,16 +1,16 @@
 package com.github.fanzezhen.base.sysbiz.foundation.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.github.fanzezhen.base.sysbiz.foundation.entity.SysRole;
+import com.github.fanzezhen.base.sysbiz.foundation.entity.SysApp;
 
 /**
  * <p>
- * 系统角色表 Mapper 接口
+ * 系统应用表 Mapper 接口
  * </p>
  *
  * @author fanzezhen
  * @since 2021-04-28
  */
-public interface SysRoleMapper extends BaseMapper<SysRole> {
+public interface SysAppMapper extends BaseMapper<SysApp> {
 
 }

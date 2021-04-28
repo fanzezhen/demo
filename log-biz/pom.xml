@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-mp</artifactId>
+            <artifactId>common-log</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.persistence</groupId>

@@ -1,7 +1,7 @@
 package com.github.fanzezhen.base.sysweb;
 
 import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
-import com.github.fanzezhen.common.mp.config.EnableCommonMpConfig;
+import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
 import com.github.fanzezhen.common.security.config.cas.EnableCommonSecurityCasConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
 import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
@@ -24,7 +24,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author zezhen.fan
  */
 @EnableCommonLogConfig
-@EnableCommonMpConfig
+@EnableCommonCoreConfig
 @EnableCommonSecurityCasConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig

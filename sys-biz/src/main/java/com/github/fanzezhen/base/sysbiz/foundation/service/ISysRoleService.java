@@ -9,7 +9,7 @@ import com.github.fanzezhen.base.sysbiz.foundation.entity.SysRole;
  * </p>
  *
  * @author fanzezhen
- * @since 2020-05-08
+ * @since 2021-04-28
  */
 public interface ISysRoleService extends IService<SysRole> {
 

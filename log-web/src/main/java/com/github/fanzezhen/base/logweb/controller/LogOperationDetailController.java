@@ -2,8 +2,7 @@ package com.github.fanzezhen.base.logweb.controller;
 
 
 import com.github.fanzezhen.base.logbiz.facade.LogOperationFacade;
-import com.github.fanzezhen.base.logbiz.facade.LogOperationServiceFacade;
-import com.github.fanzezhen.common.log.model.dto.LogOperationDto;
+import com.github.fanzezhen.common.log.foundation.entity.LogOperationDetail;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 
 /**
  * <p>
@@ -22,19 +22,13 @@ import javax.annotation.Resource;
  */
 @Controller
 @RequestMapping("/log/operation")
-public class LogOperationController {
+public class LogOperationDetailController {
     @Resource
     private LogOperationFacade logOperationFacade;
 
     @ResponseBody
-    @PostMapping("/add")
-    public boolean add(@RequestBody LogOperationDto logOperationDto) {
-        return logOperationFacade.addLogOperate(logOperationDto);
-    }
-
-    @ResponseBody
-    @PostMapping("/test")
-    public boolean record() {
-        return true;
+    @PostMapping("/add/operate-detail/batch")
+    public boolean add(@RequestBody Collection<LogOperationDetail> logOperateDetails) {
+        return logOperationFacade.addLogOperateDetailBatch(logOperateDetails);
     }
 }

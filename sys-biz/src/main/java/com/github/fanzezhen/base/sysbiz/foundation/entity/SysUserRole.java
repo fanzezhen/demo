@@ -1,11 +1,10 @@
 package com.github.fanzezhen.base.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.core.model.entity.BaseVarEntity;
+import com.github.fanzezhen.common.core.model.entity.BaseEntity;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
-
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -13,39 +12,18 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author fanzezhen
- * @since 2020-05-08
+ * @since 2021-04-28
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Accessors(chain = true)
-public class SysUserRole extends BaseVarEntity {
-
+@ApiModel(value="SysUserRole对象", description="系统用户角色表")
+public class SysUserRole extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
-    private String id;
-
-    /**
-     * 用户ID
-     */
+    @ApiModelProperty(value = "用户ID")
     private String userId;
 
-    /**
-     * 角色ID
-     */
+    @ApiModelProperty(value = "角色ID")
     private String roleId;
-
-    /**
-     * 创建人ID
-     */
-    private String createUserId;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
 
 }

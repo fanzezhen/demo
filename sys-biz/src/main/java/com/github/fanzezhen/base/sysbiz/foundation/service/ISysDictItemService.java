@@ -1,16 +1,16 @@
 package com.github.fanzezhen.base.sysbiz.foundation.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.github.fanzezhen.base.sysbiz.foundation.entity.SysUser;
+import com.github.fanzezhen.base.sysbiz.foundation.entity.SysDictItem;
 
 /**
  * <p>
- * 系统用户表 服务类
+ * 字典项 服务类
  * </p>
  *
  * @author fanzezhen
  * @since 2021-04-28
  */
-public interface ISysUserService extends IService<SysUser> {
+public interface ISysDictItemService extends IService<SysDictItem> {
 
 }

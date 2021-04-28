@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 字典
+ * 字典项
  * </p>
  *
  * @author fanzezhen
@@ -19,15 +19,18 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value="SysDict对象", description="字典")
-public class SysDict extends BaseEntity {
+@ApiModel(value="SysDictItem对象", description="字典项")
+public class SysDictItem extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(value = "字典ID")
+    private String dictId;
+
     @ApiModelProperty(value = "字典代码")
-    private String dictCode;
+    private String itemCode;
 
     @ApiModelProperty(value = "代码名称")
-    private String dictName;
+    private String itemName;
 
     @ApiModelProperty(value = "详细说明")
     private String remark;

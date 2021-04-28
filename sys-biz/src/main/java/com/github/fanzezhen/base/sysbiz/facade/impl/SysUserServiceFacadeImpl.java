@@ -59,8 +59,7 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
 
     @Override
     public SysUserVo getByUserName(String username, String appCode) {
-        return toVo(sysUserService.getOne(
-                new LambdaQueryWrapper<SysUser>().eq(SysUser::getUsername, username).eq(SysUser::getAppCode, appCode)));
+        return toVo(sysUserService.getOne(new LambdaQueryWrapper<SysUser>().eq(SysUser::getUsername, username)));
     }
 
     @Override

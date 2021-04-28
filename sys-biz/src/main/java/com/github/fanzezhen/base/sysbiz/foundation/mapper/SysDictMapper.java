@@ -5,11 +5,11 @@ import com.github.fanzezhen.base.sysbiz.foundation.entity.SysDict;
 
 /**
  * <p>
- * 系统字典表 Mapper 接口
+ * 字典 Mapper 接口
  * </p>
  *
  * @author fanzezhen
- * @since 2020-05-08
+ * @since 2021-04-28
  */
 public interface SysDictMapper extends BaseMapper<SysDict> {
 

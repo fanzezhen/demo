@@ -1,8 +1,8 @@
 package com.github.fanzezhen.base.logbiz.facade.impl;
 
 import com.github.fanzezhen.base.logbiz.facade.LogExceptionServiceFacade;
-import com.github.fanzezhen.base.logbiz.foundation.service.ILogExceptionService;
-import com.github.fanzezhen.base.logbiz.model.dto.LogExceptionDto;
+import com.github.fanzezhen.common.log.foundation.service.ILogExceptionService;
+import com.github.fanzezhen.common.log.model.dto.LogExceptionDto;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

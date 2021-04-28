@@ -1,5 +1,10 @@
 package com.github.fanzezhen.base.logweb;
 
+import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
+import com.github.fanzezhen.common.exception.config.EnableCommonExceptionConfig;
+import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
+import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
+import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +22,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author zezhen.fan
  */
+@EnableCommonLogConfig
+@EnableCommonCoreConfig
+@EnableCommonExceptionConfig
+@EnableCommonSwaggerConfig
+@EnableCommonWebConfig
 @EnableScheduling
 @EnableTransactionManagement
 @Slf4j
 @EnableSwagger2
 @EnableDiscoveryClient
-@MapperScan({"com.github.fanzezhen.base.logbiz.foundation.mapper"})
-@EntityScan("com.github.fanzezhen.base.logbiz.foundation.entry")
+@MapperScan({"com.github.fanzezhen.base.logbiz.foundation.mapper", "com.github.fanzezhen.common.log.foundation.mapper"})
+@EntityScan({"com.github.fanzezhen.base.logbiz.foundation.entry", "com.github.fanzezhen.common.log.foundation.entity"})
 @SpringBootApplication(scanBasePackages = {"com.github.fanzezhen"})
 @EnableFeignClients(basePackages = {"com.github.fanzezhen.base"})
 public class LogApplication {
@@ -33,11 +43,12 @@ public class LogApplication {
 
     /**
      * 启用负载均衡，默认算法是轮询
+     *
      * @return restTemplate
      */
     @LoadBalanced
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 }

@@ -1,11 +1,10 @@
 package com.github.fanzezhen.base.sysbiz.foundation.entity;
 
 import com.github.fanzezhen.common.core.model.entity.BaseVarEntity;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
-
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -13,89 +12,30 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author fanzezhen
- * @since 2020-05-08
+ * @since 2021-04-28
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Accessors(chain = true)
+@ApiModel(value="SysPermission对象", description="菜单、按钮表")
 public class SysPermission extends BaseVarEntity {
-
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键
-     */
-    private String id;
-
-    /**
-     * 上级ID
-     */
+    @ApiModelProperty(value = "上级ID")
     private String pid;
 
-    /**
-     * icon
-     */
-    private String icon;
+    @ApiModelProperty(value = "显示名称")
+    private String displayName;
 
-    /**
-     * 权限代码
-     */
-    private String code;
-
-    /**
-     * 名称
-     */
-    private String name;
-
-    /**
-     * 状态（0--可用；1--未用）
-     */
-    private Integer status;
-
-    /**
-     * 请求地址
-     */
+    @ApiModelProperty(value = "请求地址")
     private String operationUrl;
 
-    /**
-     * 是否为菜单（1--菜单；2--按钮）
-     */
-    private Integer type;
+    @ApiModelProperty(value = "是否为菜单（1--菜单；2--按钮）")
+    private Integer permissionType;
 
-    /**
-     * 排序优先级
-     */
+    @ApiModelProperty(value = "排序优先级")
     private Integer orderNum;
 
-    /**
-     * 是否删除（0--否；1--是）
-     */
-    private Integer delFlag;
-
-    /**
-     * 填表人ID
-     */
-    private String createUserId;
-
-    /**
-     * 最后更新人ID
-     */
-    private String updateUserId;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
-
-    /**
-     * 所属应用代码
-     */
+    @ApiModelProperty(value = "所属应用")
     private String appCode;
-
 
 }

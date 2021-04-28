@@ -1,7 +1,6 @@
 package com.github.fanzezhen.base.syspublic;
 
 import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
-import com.github.fanzezhen.common.mp.config.EnableCommonMpConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
 import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author zezhen.fan
  */
-@EnableCommonMpConfig
+@EnableCommonCoreConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig
 @EnableScheduling
