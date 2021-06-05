@@ -13,6 +13,10 @@
     <artifactId>sys-biz</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

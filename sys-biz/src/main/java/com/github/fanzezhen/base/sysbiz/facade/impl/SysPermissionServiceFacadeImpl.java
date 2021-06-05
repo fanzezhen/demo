@@ -1,5 +1,6 @@
 package com.github.fanzezhen.base.sysbiz.facade.impl;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
@@ -111,17 +112,8 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
 
     @Override
     public List<SysPermissionVo> listLoginUserMenuPermission() {
-        List<SysPermissionVo> sysPermissionVoList = new ArrayList<>();
         List<Object> permissionIdList = listLoginUserPermissionId();
-        if (permissionIdList.size() <= 0) {
-            return sysPermissionVoList;
-        }
-        // 根据权限ID集合查询权限集合
-        sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getPermissionType, PermissionTypeEnum.MENU.getType())
-                .in(SysPermission::getId, permissionIdList)
-                .orderByAsc(SysPermission::getOrderNum)));
-        return sysPermissionVoList;
+        return listByTypeAndIdList(PermissionTypeEnum.MENU, permissionIdList);
     }
 
     @Override
@@ -136,20 +128,26 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         // 根据角色ID集合查询权限ID集合
         List<Object> permissionIdList = sysRolePermissionService.listObjs(new LambdaQueryWrapper<SysRolePermission>()
                 .select(SysRolePermission::getPermissionId).in(SysRolePermission::getRoleId, roleIdList));
-        if (permissionIdList.size() <= 0) {
-            return sysPermissionVoList;
-        }
-        // 根据权限ID集合查询权限集合
-        sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
-                .eq(SysPermission::getPermissionType, PermissionTypeEnum.MENU.getType())
-                .in(SysPermission::getId, permissionIdList)
-                .orderByAsc(SysPermission::getOrderNum)));
-        return sysPermissionVoList;
+        return listByTypeAndIdList(PermissionTypeEnum.MENU, permissionIdList);
     }
 
     @Override
     public List<SysPermissionVo> listAllPermission(String appCode) {
         return toVo(sysPermissionService.list());
+    }
+
+    @Override
+    public List<SysPermissionVo> listByTypeAndIdList(PermissionTypeEnum typeEnum, Collection<Object> permissionIds) {
+        List<SysPermissionVo> sysPermissionVoList = new ArrayList<>();
+        if (CollUtil.isEmpty(permissionIds)) {
+            return sysPermissionVoList;
+        }
+        // 根据权限ID集合查询权限集合
+        sysPermissionVoList = toVo(sysPermissionService.list(new LambdaQueryWrapper<SysPermission>()
+                .eq(SysPermission::getPermissionType, typeEnum.getType())
+                .in(SysPermission::getId, permissionIds)
+                .orderByAsc(SysPermission::getOrderNum)));
+        return sysPermissionVoList;
     }
 
     @Override

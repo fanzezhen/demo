@@ -12,7 +12,7 @@ public interface LogOperationFacade {
     /**
      * 增
      *
-     * @param logOperate 操作日志
+     * @param logOperation 操作日志
      * @return 布尔
      */
     boolean addLogOperate(LogOperation logOperation);
@@ -20,7 +20,7 @@ public interface LogOperationFacade {
     /**
      * 批量添加操作日志详情
      *
-     * @param logOperateDetails 操作日志详情集合
+     * @param logOperationDetailCollection 操作日志详情集合
      * @return 布尔
      */
     boolean addLogOperateDetailBatch(Collection<LogOperationDetail> logOperationDetailCollection);

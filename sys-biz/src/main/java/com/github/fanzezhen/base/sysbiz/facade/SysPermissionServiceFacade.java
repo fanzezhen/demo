@@ -1,8 +1,10 @@
 package com.github.fanzezhen.base.sysbiz.facade;
 
 import com.github.fanzezhen.base.sysbiz.model.vo.SysPermissionVo;
+import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -77,6 +79,15 @@ public interface SysPermissionServiceFacade {
      * @return 权限列表
      */
     List<SysPermissionVo> listAllPermission(@RequestParam("appCode") String appCode);
+
+    /**
+     * 查询权限列表
+     *
+     * @param typeEnum      权限类型枚举
+     * @param permissionIds 权限Id集合
+     * @return 权限列表
+     */
+    List<SysPermissionVo> listByTypeAndIdList(PermissionTypeEnum typeEnum, Collection<Object> permissionIds);
 
     /**
      * 权限树

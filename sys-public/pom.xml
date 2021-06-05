@@ -11,7 +11,7 @@
 
     <groupId>com.github.fanzezhen.base</groupId>
     <artifactId>sys-public</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
 
     <profiles>
         <profile>
