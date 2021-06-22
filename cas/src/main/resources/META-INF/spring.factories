@@ -1,5 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.fanzezhen.base.cas.SpringConfig,\
+  com.github.fanzezhen.demo.cas.SpringConfig,\
   org.apereo.cas.config.CasEmbeddedContainerTomcatConfiguration,\
   org.apereo.cas.config.CasEmbeddedContainerTomcatFiltersConfiguration
 
