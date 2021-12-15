@@ -50,6 +50,10 @@
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
             <artifactId>common-swagger</artifactId>
         </dependency>
         <dependency>

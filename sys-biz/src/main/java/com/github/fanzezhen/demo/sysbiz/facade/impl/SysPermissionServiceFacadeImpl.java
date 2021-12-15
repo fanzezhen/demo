@@ -1,5 +1,6 @@
 package com.github.fanzezhen.demo.sysbiz.facade.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -7,7 +8,6 @@ import com.github.fanzezhen.common.core.constant.CommonConstant;
 import com.github.fanzezhen.common.core.context.SysContext;
 import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
 import com.github.fanzezhen.common.core.enums.db.DelFlagEnum;
-import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.demo.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.facade.SysUserServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysPermission;
@@ -179,7 +179,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
         if (sysPermission == null) {
             return null;
         }
-        return BeanConverterUtil.copy(sysPermission, new SysPermissionVo());
+        return BeanUtil.copyProperties(sysPermission, SysPermissionVo.class);
     }
 
     private List<SysPermissionVo> toVo(Collection<SysPermission> sysPermissions) {

@@ -55,12 +55,8 @@
             <artifactId>common-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-transport-simple-http</artifactId>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-sentinel</artifactId>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -127,6 +123,9 @@
                     <include>application-${profiles.active}.properties</include>
                     <include>bootstrap.properties</include>
                     <include>bootstrap-${profiles.active}.properties</include>
+                    <include>static/</include>
+                    <include>templates/</include>
+                    <include>META-INF/</include>
                 </includes>
             </resource>
         </resources>

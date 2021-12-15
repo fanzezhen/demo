@@ -1,10 +1,10 @@
 package com.github.fanzezhen.demo.sysbiz.facade.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.core.enums.db.DelFlagEnum;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
-import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.demo.sysbiz.facade.SysRoleServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysRole;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUserRole;
@@ -74,7 +74,7 @@ public class SysRoleServiceFacadeImpl implements SysRoleServiceFacade {
         if (sysRole == null) {
             return null;
         }
-        return BeanConverterUtil.copy(sysRole, new SysRoleVo());
+        return BeanUtil.copyProperties(sysRole, SysRoleVo.class);
     }
 
     private List<SysRoleVo> toVo(Collection<SysRole> sysRoles) {

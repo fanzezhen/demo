@@ -2,39 +2,6 @@
 version: "3"
 #服务
 services:
-  mysql:
-    container_name: mysql        # 指定容器的名称
-    image: mysql:latest                   # 指定镜像和版本
-    restart: always
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_ROOT_HOST: "%"
-    volumes:
-      - "./mysql/data:/var/lib/mysql"           # 挂载数据目录
-      - "./mysql/config:/etc/mysql/conf.d"      # 挂载配置文件目录
-
-  #服务名称
-  redis:
-    #镜像名: 仓库/标签:版本
-    image: redis:alpine
-    container_name: redis
-    restart: always
-    # 暴露端口信息
-    ports:
-      - "6379"
-
-  #服务名称
-  sentinel-dashboard:
-    #镜像名: 仓库/标签:版本
-    image: bladex/sentinel-dashboard
-    container_name: sentinel-dashboard
-    restart: always
-    # 暴露端口信息
-    ports:
-      - "8858:8858"
-
   #服务名称
   eureka-server:
     #镜像名: 仓库/标签:版本
@@ -77,7 +44,7 @@ services:
       - -Xmx512M
       - -Djava.security.egd=file:/dev/./urandom
       - -jar
-      - /opt/app/sgst-open-base-pras.jar
+      - /opt/app/log-web.jar
       - --env=test
     network_mode: "host"
     # 暴露端口信息

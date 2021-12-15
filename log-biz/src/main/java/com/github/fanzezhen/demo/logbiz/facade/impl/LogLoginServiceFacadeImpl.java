@@ -1,8 +1,8 @@
 package com.github.fanzezhen.demo.logbiz.facade.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
-import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.demo.logbiz.facade.LogLoginServiceFacade;
 import com.github.fanzezhen.common.log.foundation.entity.LogLogin;
 import com.github.fanzezhen.common.log.foundation.service.ILogLoginService;
@@ -33,6 +33,6 @@ public class LogLoginServiceFacadeImpl implements LogLoginServiceFacade {
         if (logLogin == null) {
             return null;
         }
-        return BeanConverterUtil.copy(logLogin, new LogLoginVo());
+        return BeanUtil.copyProperties(logLogin,  LogLoginVo.class);
     }
 }

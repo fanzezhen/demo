@@ -1,12 +1,12 @@
 package com.github.fanzezhen.demo.sysbiz.facade.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.core.model.dto.PageDto;
-import com.github.fanzezhen.common.core.util.BeanConverterUtil;
 import com.github.fanzezhen.demo.sysbiz.facade.SysUserServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUser;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUserRole;
@@ -84,7 +84,7 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
     @Transactional(rollbackFor = Throwable.class)
     public List<SysUserVo> saveBatch(List<SysUserDto> sysUserDtoList) {
         List<SysUser> entityList = sysUserDtoList.stream().map(sysUserDto ->
-                BeanConverterUtil.copy(sysUserDto, new SysUser())).collect(Collectors.toList());
+                BeanUtil.copyProperties(sysUserDto,  SysUser.class)).collect(Collectors.toList());
         if (!sysUserService.saveOrUpdateBatch(entityList)) {
             ExceptionUtil.throwException("批量保存用户失败！");
         }
@@ -106,13 +106,13 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
         if (!sysUserRoleService.saveBatch(sysUserRoleList)) {
             ExceptionUtil.throwException("批量保存用户权限失败！");
         }
-        return BeanConverterUtil.copyList(sysUserDtoList, SysUserVo.class);
+        return BeanUtil.copyToList(sysUserDtoList, SysUserVo.class, CopyOptions.create());
     }
 
     private SysUserVo toVo(SysUser sysUser) {
         if (sysUser == null) {
             return null;
         }
-        return BeanConverterUtil.copy(sysUser, new SysUserVo());
+        return BeanUtil.copyProperties(sysUser,  SysUserVo.class);
     }
 }
