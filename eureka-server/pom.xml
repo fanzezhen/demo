@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>base</artifactId>
+        <artifactId>demo</artifactId>
         <groupId>com.github.fanzezhen</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.github.fanzezhen.base</groupId>
+    <groupId>com.github.fanzezhen.demo</groupId>
     <artifactId>eureka-server</artifactId>
     <name>eureka-server</name>
     <description>Demo project for Spring Boot Eureka</description>
@@ -43,6 +43,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-log</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -97,7 +101,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.github.fanzezhen.base.eurekaserver.EurekaServerApplication</mainClass>
+                    <mainClass>com.github.fanzezhen.demo.eurekaserver.EurekaServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

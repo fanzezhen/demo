@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>base</artifactId>
+        <artifactId>demo</artifactId>
         <groupId>com.github.fanzezhen</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.fanzezhen.base</groupId>
+    <groupId>com.github.fanzezhen.demo</groupId>
     <artifactId>log-web</artifactId>
 
     <profiles>
@@ -38,7 +38,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.fanzezhen.base</groupId>
+            <groupId>com.github.fanzezhen.demo</groupId>
             <artifactId>log-biz</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -145,7 +145,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.github.fanzezhen.base.logweb.LogApplication</mainClass>
+                    <mainClass>com.github.fanzezhen.demo.logweb.LogApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

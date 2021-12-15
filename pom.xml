@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.fanzezhen</groupId>
-    <artifactId>base</artifactId>
+    <artifactId>demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <com.github.fanzezhen.common.version>2.1.0</com.github.fanzezhen.common.version>
+        <com.github.fanzezhen.common.version>2.1.1</com.github.fanzezhen.common.version>
         <app.server>-tomcat</app.server>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
         <cn.hutool.version>5.6.4</cn.hutool.version>
@@ -153,6 +153,11 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-core</artifactId>
+                <version>${cn.hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-log</artifactId>
                 <version>${cn.hutool.version}</version>
             </dependency>
             <dependency>
