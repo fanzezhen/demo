@@ -6,7 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.github.fanzezhen.common.core.model.dto.PageDto;
+import com.github.fanzezhen.common.mp.model.dto.PageDto;
 import com.github.fanzezhen.demo.sysbiz.facade.SysUserServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUser;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUserRole;

@@ -2,7 +2,7 @@ package com.github.fanzezhen.demo.cas.authentication;
 
 
 import com.github.fanzezhen.demo.cas.DataService;
-import com.github.fanzezhen.common.core.model.dto.SysUserDto;
+import com.github.fanzezhen.common.mp.model.dto.SysUserDto;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apereo.cas.authentication.AuthenticationException;

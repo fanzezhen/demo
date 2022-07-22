@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.logbiz;
 
-import com.github.fanzezhen.common.core.generator.GeneratorTool;
-import com.github.fanzezhen.common.core.generator.MysqlGenerator;
+import com.github.fanzezhen.common.mp.generator.GeneratorTool;
+import com.github.fanzezhen.common.mp.generator.MysqlGenerator;
 
 /**
  * @author zezhen.fan
@@ -19,6 +19,6 @@ public class MppGenerator {
                 .setDbPassword(dbPassword)
                 .setSuperiorModuleNames("log-biz")
                 .setParentPackageName(moduleParentName)
-                .setSuperEntityClass(com.github.fanzezhen.common.core.model.entity.BaseVarEntity.class));
+                .setSuperEntityClass(com.github.fanzezhen.common.mp.model.entity.BaseVarEntity.class));
     }
 }

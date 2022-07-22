@@ -2,7 +2,7 @@ package com.github.fanzezhen.demo.sysbiz.model.dto;
 
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUser;
 import com.github.fanzezhen.common.core.annotion.OperateLog;
-import com.github.fanzezhen.common.core.dict.SysUserDict;
+import com.github.fanzezhen.common.mp.model.SysUserDict;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

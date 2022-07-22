@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.cas;
 
 import cn.hutool.extra.spring.SpringUtil;
-import com.github.fanzezhen.common.core.model.dto.SysUserDto;
+import com.github.fanzezhen.common.mp.model.dto.SysUserDto;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apereo.cas.authentication.AuthenticationException;
@@ -32,7 +32,6 @@ public class DataService {
     }
 
     private DataSource getDataSourceFromSpring() {
-        // 也可以用 return SpringUtil.getBean("dataSource");
         return SpringUtil.getBean(HikariDataSource.class);
     }
 

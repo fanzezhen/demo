@@ -18,6 +18,14 @@
             <artifactId>common-log</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-mp</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
         </dependency>

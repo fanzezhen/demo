@@ -5,9 +5,10 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
+import com.github.fanzezhen.common.core.constant.SecurityConstant;
 import com.github.fanzezhen.common.core.context.SysContext;
 import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
-import com.github.fanzezhen.common.core.enums.db.DelFlagEnum;
+import com.github.fanzezhen.common.mp.enums.DelFlagEnum;
 import com.github.fanzezhen.demo.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.facade.SysUserServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysPermission;
@@ -154,7 +155,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     public List<SysPermissionVo> listPermissionTree() {
         LambdaQueryWrapper<SysPermission> sysPermissionQueryWrapper = new LambdaQueryWrapper<SysPermission>()
                 .eq(SysPermission::getDelFlag, DelFlagEnum.NOT_DELETED.code);
-        return initPermissionTree(CommonConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
+        return initPermissionTree(SecurityConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
     }
 
     @Override
@@ -172,7 +173,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
                 .eq(SysPermission::getDelFlag, DelFlagEnum.NOT_DELETED.code)
                 .in(SysPermission::getId, permissionIdList)
                 .orderByAsc(SysPermission::getOrderNum);
-        return initPermissionTree(CommonConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
+        return initPermissionTree(SecurityConstant.PERMISSION_DEFAULT_PID, sysPermissionService.list(sysPermissionQueryWrapper));
     }
 
     private SysPermissionVo toVo(SysPermission sysPermission) {

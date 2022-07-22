@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysRole;
 import com.github.fanzezhen.demo.sysbiz.model.dto.SysRoleDto;
 import com.github.fanzezhen.demo.sysbiz.model.vo.SysRoleVo;
-import com.github.fanzezhen.common.core.model.dto.PageDto;
+import com.github.fanzezhen.common.mp.model.dto.PageDto;
 
 import java.util.List;
 

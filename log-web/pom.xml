@@ -48,6 +48,14 @@
         </dependency>
         <dependency>
             <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-mp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fanzezhen.common</groupId>
             <artifactId>common-exception</artifactId>
         </dependency>
         <dependency>

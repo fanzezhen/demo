@@ -9,7 +9,7 @@ import com.github.fanzezhen.demo.cas.CaptchaUsernamePasswordCredential;
 import com.github.fanzezhen.demo.cas.exection.CheckCodeErrorException;
 import com.github.fanzezhen.common.core.constant.SecurityConstant;
 import com.github.fanzezhen.common.core.model.bean.ImageCode;
-import com.github.fanzezhen.common.core.model.dto.SysUserDto;
+import com.github.fanzezhen.common.mp.model.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apereo.cas.authentication.*;
 import org.apereo.cas.authentication.handler.support.AbstractPreAndPostProcessingAuthenticationHandler;

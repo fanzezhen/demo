@@ -2,7 +2,7 @@ package com.github.fanzezhen.demo.logbiz.facade.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.github.fanzezhen.common.core.model.dto.PageDto;
+import com.github.fanzezhen.common.mp.model.dto.PageDto;
 import com.github.fanzezhen.demo.logbiz.facade.LogLoginServiceFacade;
 import com.github.fanzezhen.common.log.foundation.entity.LogLogin;
 import com.github.fanzezhen.common.log.foundation.service.ILogLoginService;

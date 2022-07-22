@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.demo.sysbiz.foundation.entity.SysUser;
 import com.github.fanzezhen.demo.sysbiz.model.dto.SysUserDto;
 import com.github.fanzezhen.demo.sysbiz.model.vo.SysUserVo;
-import com.github.fanzezhen.common.core.model.dto.PageDto;
+import com.github.fanzezhen.common.mp.model.dto.PageDto;
 
 import java.util.List;
 

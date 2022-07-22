@@ -3,9 +3,10 @@ package com.github.fanzezhen.demo.sysweb;
 import cn.stylefeng.roses.kernel.model.response.ResponseData;
 import com.github.fanzezhen.common.core.annotion.BizLog;
 import com.github.fanzezhen.common.core.constant.CommonConstant;
+import com.github.fanzezhen.common.core.constant.SecurityConstant;
 import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
-import com.github.fanzezhen.common.core.model.dto.PageDto;
-import com.github.fanzezhen.common.core.struct.SysUserBizLogStruct;
+import com.github.fanzezhen.common.mp.model.dto.PageDto;
+import com.github.fanzezhen.common.mp.model.SysUserBizLogStruct;
 import com.github.fanzezhen.demo.sysbiz.facade.SysPermissionServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.facade.SysRoleServiceFacade;
 import com.github.fanzezhen.demo.sysbiz.facade.SysUserRoleServiceFacade;
@@ -89,7 +90,7 @@ public class UserController extends BaseController {
     @BizLog(value = "新增用户", struct = SysUserBizLogStruct.class)
     public ResponseData add(@RequestBody SysUserDto sysUserDto) {
         sysUserDto.setId(null);
-        sysUserDto.setPassword(SecurityUtil.encrypt(CommonConstant.DEFAULT_USER_PASSWORD));
+        sysUserDto.setPassword(SecurityUtil.encrypt(SecurityConstant.DEFAULT_USER_PASSWORD));
         return ResponseData.success(sysUserServiceFacade.save(sysUserDto));
     }
 
