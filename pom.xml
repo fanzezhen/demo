@@ -11,7 +11,7 @@
 
     <properties>
         <com.github.fanzezhen.jdk8.version>0.0.3.4</com.github.fanzezhen.jdk8.version>
-        <com.github.fanzezhen.common.version>2.1.2</com.github.fanzezhen.common.version>
+        <com.github.fanzezhen.common.version>2.1.3</com.github.fanzezhen.common.version>
         <app.server>-tomcat</app.server>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
         <cn.hutool.version>5.7.3</cn.hutool.version>

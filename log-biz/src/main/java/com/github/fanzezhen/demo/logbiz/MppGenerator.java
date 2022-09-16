@@ -19,6 +19,6 @@ public class MppGenerator {
                 .setDbPassword(dbPassword)
                 .setSuperiorModuleNames("log-biz")
                 .setParentPackageName(moduleParentName)
-                .setSuperEntityClass(com.github.fanzezhen.common.mp.model.entity.BaseVarEntity.class));
+                .setSuperEntityClass(com.github.fanzezhen.common.mp.model.entity.BaseEntity.class));
     }
 }

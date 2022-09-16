@@ -33,7 +33,7 @@ public class EurekaServerApplication {
         try {
             ip = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            log.warn("", e);
         }
         String port = env.getProperty("server.port");
         String path = env.getProperty("server.servlet.context-path");

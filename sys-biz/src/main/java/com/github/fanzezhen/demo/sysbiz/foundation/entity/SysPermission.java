@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.mp.model.entity.BaseVarEntity;
+import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ApiModel(value="SysPermission对象", description="菜单、按钮表")
-public class SysPermission extends BaseVarEntity {
+public class SysPermission extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "上级ID")

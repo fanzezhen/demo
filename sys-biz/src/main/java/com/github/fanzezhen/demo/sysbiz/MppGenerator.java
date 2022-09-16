@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.sysbiz;
 
+import com.github.fanzezhen.common.mp.generator.GeneratorBean;
 import com.github.fanzezhen.common.mp.generator.GeneratorTool;
-import com.github.fanzezhen.common.mp.generator.MysqlGenerator;
 
 /**
  * @author zezhen.fan
@@ -12,13 +12,13 @@ public class MppGenerator {
         String dbUsername = "root";
         String dbPassword = "root";
         String moduleParentName = "com.github.fanzezhen.common.mp.generator";
-        GeneratorTool.generator(MysqlGenerator.builder().build()
+        GeneratorTool.generator(new GeneratorBean()
                 .setAuthor("fanzezhen")
-                .setDataSourceConfigUrl(dataSourceConfigUrl)
+                .setDbUrl(dataSourceConfigUrl)
                 .setDbUsername(dbUsername)
                 .setDbPassword(dbPassword)
-                .setSuperiorModuleNames("log-biz")
+                .setModuleName("log-biz")
                 .setParentPackageName(moduleParentName)
-                .setSuperEntityClass(com.github.fanzezhen.common.mp.model.entity.BaseVarEntity.class));
+                .setSuperEntityClass(com.github.fanzezhen.common.mp.model.entity.BaseEntity.class));
     }
 }

@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.mp.model.entity.BaseVarEntity;
+import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ApiModel(value="SysRole对象", description="系统角色表")
-public class SysRole extends BaseVarEntity {
+public class SysRole extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "角色名")

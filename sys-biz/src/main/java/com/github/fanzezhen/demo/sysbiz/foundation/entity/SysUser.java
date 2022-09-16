@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.Version;
 import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
-import com.github.fanzezhen.common.mp.model.entity.BaseVarEntity;
+import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ApiModel(value="SysUser对象", description="系统用户表")
-public class SysUser extends BaseVarEntity {
+public class SysUser extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "用户名")
