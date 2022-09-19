@@ -11,7 +11,6 @@
 
     <groupId>com.github.fanzezhen.demo</groupId>
     <artifactId>sys-public</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
     <profiles>
         <profile>
@@ -61,12 +60,24 @@
             <artifactId>common-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
         <!-- actuator 组件是Spring Boot的监控组件，actuator一旦应用，在启动的时候，会发布一系列的URL服务。包含一个shutdown服务，代表优雅关闭
             当Spring Boot 应用中的actuator组件接收到shutdown请求的时候，会触发优雅关闭。
@@ -89,20 +100,6 @@
             <version>${spring-cloud.version}</version>
             <type>pom</type>
             <scope>runtime</scope>
-        </dependency>
-        <!-- spring cloud Eureka Client 启动器，因为Eureka Server开启了安全校验，
-    所有需要依赖更大范围的jar包资源spring-cloud-starter-eureka-server-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-eureka-server</artifactId>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
