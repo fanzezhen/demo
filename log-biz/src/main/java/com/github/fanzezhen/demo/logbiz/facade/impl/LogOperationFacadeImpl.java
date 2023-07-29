@@ -7,7 +7,7 @@ import com.github.fanzezhen.common.log.foundation.service.ILogOperationDetailSer
 import com.github.fanzezhen.common.log.foundation.service.ILogOperationService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.Collection;
 
 /**

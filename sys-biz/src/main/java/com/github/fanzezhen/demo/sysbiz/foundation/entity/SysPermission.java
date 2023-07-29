@@ -1,8 +1,7 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
 import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,26 +15,26 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value="SysPermission对象", description="菜单、按钮表")
+@Schema(name="SysPermission对象", description="菜单、按钮表")
 public class SysPermission extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "上级ID")
+    @Schema(name = "上级ID")
     private String pid;
 
-    @ApiModelProperty(value = "显示名称")
+    @Schema(name = "显示名称")
     private String displayName;
 
-    @ApiModelProperty(value = "请求地址")
+    @Schema(name = "请求地址")
     private String operationUrl;
 
-    @ApiModelProperty(value = "是否为菜单（1--菜单；2--按钮）")
+    @Schema(name = "是否为菜单（1--菜单；2--按钮）")
     private Integer permissionType;
 
-    @ApiModelProperty(value = "排序优先级")
+    @Schema(name = "排序优先级")
     private Integer orderNum;
 
-    @ApiModelProperty(value = "所属应用")
+    @Schema(name = "所属应用")
     private String appCode;
 
 }

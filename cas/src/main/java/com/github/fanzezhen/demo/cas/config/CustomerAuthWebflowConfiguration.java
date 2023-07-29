@@ -16,7 +16,7 @@ import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 import org.springframework.webflow.execution.Action;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author anumbrella

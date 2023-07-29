@@ -1,6 +1,7 @@
 package com.github.fanzezhen.demo.sysbiz.facade.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.fanzezhen.common.mp.enums.DelFlagEnum;
@@ -15,7 +16,7 @@ import com.github.fanzezhen.demo.sysbiz.model.vo.SysRoleVo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.*;
 
 /**
@@ -62,12 +63,17 @@ public class SysRoleServiceFacadeImpl implements SysRoleServiceFacade {
     @Override
     public IPage<SysRoleVo> page(PageDto<SysRoleDto, SysRole> pageDto) {
         LambdaQueryWrapper<SysRole> queryWrapper = new LambdaQueryWrapper<>(pageDto.getParam());
-        if (!StringUtils.isEmpty(pageDto.getParam().getRoleName())) {
+        if (StrUtil.isNotEmpty(pageDto.getParam().getRoleName())) {
             queryWrapper.like(SysRole::getRoleName, pageDto.getParam().getRoleName());
         }
         pageDto.getParam().setRoleName(null);
         queryWrapper.orderByDesc(SysRole::getUpdateTime);
         return sysRoleService.page(pageDto, queryWrapper).convert(this::toVo);
+    }
+
+    @Override
+    public boolean del(Collection<String> ids) {
+        return sysRoleService.removeBatchByIds(ids);
     }
 
     private SysRoleVo toVo(SysRole sysRole) {

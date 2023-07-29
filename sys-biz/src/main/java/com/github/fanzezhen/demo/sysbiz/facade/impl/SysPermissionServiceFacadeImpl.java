@@ -5,7 +5,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.fanzezhen.common.core.constant.SecurityConstant;
-import com.github.fanzezhen.common.core.context.SysContext;
+import com.github.fanzezhen.common.core.context.SysContextHolder;
 import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
 import com.github.fanzezhen.common.mp.enums.DelFlagEnum;
 import com.github.fanzezhen.demo.sysbiz.facade.SysPermissionServiceFacade;
@@ -20,9 +20,8 @@ import com.github.fanzezhen.demo.sysbiz.model.vo.SysPermissionVo;
 import com.github.fanzezhen.demo.sysbiz.model.vo.SysUserVo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -76,7 +75,7 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
     public List<Object> listLoginUserPermissionId() {
         List<Object> permissionIdList = new ArrayList<>();
         // 获取security登录用户
-        String userName = SysContext.getUserName();
+        String userName = SysContextHolder.getUserName();
         if (StrUtil.isBlank(userName)) {
             return permissionIdList;
         }
@@ -159,12 +158,12 @@ public class SysPermissionServiceFacadeImpl implements SysPermissionServiceFacad
 
     @Override
     public List<SysPermissionVo> listPermissionTree(String userId) {
-        if (StringUtils.isEmpty(userId)) {
+        if (StrUtil.isEmpty(userId)) {
             return new ArrayList<>();
         }
         List<SysPermissionVo> sysPermissionVoList = new ArrayList<>();
         List<Object> permissionIdList = listIdObjByUserId(userId);
-        if (permissionIdList.size() <= 0) {
+        if (permissionIdList.size() == 0) {
             return sysPermissionVoList;
         }
         // 根据权限ID集合查询权限集合

@@ -10,7 +10,7 @@ import com.github.fanzezhen.common.log.model.dto.LogLoginDto;
 import com.github.fanzezhen.common.log.model.vo.LogLoginVo;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author zezhen.fan

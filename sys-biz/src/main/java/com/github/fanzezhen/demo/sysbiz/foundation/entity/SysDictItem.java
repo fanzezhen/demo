@@ -4,8 +4,7 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.Version;
 import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -19,33 +18,33 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value="SysDictItem对象", description="字典项")
+@Schema(name="SysDictItem对象", description="字典项")
 public class SysDictItem extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "字典ID")
+    @Schema(name = "字典ID")
     private String dictId;
 
-    @ApiModelProperty(value = "字典代码")
+    @Schema(name = "字典代码")
     private String itemCode;
 
-    @ApiModelProperty(value = "代码名称")
+    @Schema(name = "代码名称")
     private String itemName;
 
-    @ApiModelProperty(value = "详细说明")
+    @Schema(name = "详细说明")
     private String remark;
 
-    @ApiModelProperty(value = "排序优先级")
+    @Schema(name = "排序优先级")
     private Integer orderNum;
 
-    @ApiModelProperty(value = "所属应用")
+    @Schema(name = "所属应用")
     private String appCode;
 
-    @ApiModelProperty(value = "状态（0--正常；1--停用）")
+    @Schema(name = "状态（0--正常；1--停用）")
     @TableField(fill = FieldFill.INSERT)
     private Integer status;
 
-    @ApiModelProperty(value = "版本号")
+    @Schema(name = "版本号")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @Version
     private Integer version;

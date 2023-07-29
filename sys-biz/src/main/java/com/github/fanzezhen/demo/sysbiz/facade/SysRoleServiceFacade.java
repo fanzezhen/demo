@@ -6,6 +6,7 @@ import com.github.fanzezhen.demo.sysbiz.model.dto.SysRoleDto;
 import com.github.fanzezhen.demo.sysbiz.model.vo.SysRoleVo;
 import com.github.fanzezhen.common.mp.model.dto.PageDto;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -57,4 +58,5 @@ public interface SysRoleServiceFacade {
      * @return 分页结果
      */
     IPage<SysRoleVo> page(PageDto<SysRoleDto, SysRole> pageDto);
+    boolean del(Collection<String> ids);
 }

@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author zezhen.fan
@@ -31,7 +30,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableScheduling
 @EnableTransactionManagement
 @Slf4j
-@EnableSwagger2
 @EnableDiscoveryClient
 @MapperScan({"com.github.fanzezhen.demo.sysbiz.foundation.mapper", "com.github.fanzezhen.common.*.foundation.mapper"})
 @EntityScan({"com.github.fanzezhen.demo.sysbiz.foundation.entry", "com.github.fanzezhen.common.*.foundation.entity"})

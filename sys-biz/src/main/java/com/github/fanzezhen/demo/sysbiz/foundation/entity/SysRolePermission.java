@@ -1,8 +1,7 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
 import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,14 +15,14 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value="SysRolePermission对象", description="角色权限关联表")
+@Schema(name="SysRolePermission对象", description="角色权限关联表")
 public class SysRolePermission extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "角色ID")
+    @Schema(name = "角色ID")
     private Long roleId;
 
-    @ApiModelProperty(value = "权限ID")
+    @Schema(name = "权限ID")
     private Long permissionId;
 
 

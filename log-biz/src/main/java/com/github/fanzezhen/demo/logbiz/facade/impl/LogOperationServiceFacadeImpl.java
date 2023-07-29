@@ -5,7 +5,7 @@ import com.github.fanzezhen.common.log.foundation.service.ILogOperationService;
 import com.github.fanzezhen.common.log.model.dto.LogOperationDto;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author zezhen.fan

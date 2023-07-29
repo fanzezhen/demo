@@ -2,7 +2,6 @@ package com.github.fanzezhen.demo.sysweb;
 
 import cn.stylefeng.roses.kernel.model.response.ResponseData;
 import com.github.fanzezhen.common.core.annotion.BizLog;
-import com.github.fanzezhen.common.core.constant.CommonConstant;
 import com.github.fanzezhen.common.core.constant.SecurityConstant;
 import com.github.fanzezhen.common.core.enums.auth.PermissionTypeEnum;
 import com.github.fanzezhen.common.mp.model.dto.PageDto;
@@ -18,13 +17,16 @@ import com.github.fanzezhen.demo.sysbiz.model.dto.SysPermissionDto;
 import com.github.fanzezhen.demo.sysbiz.model.dto.SysRoleDto;
 import com.github.fanzezhen.demo.sysbiz.model.dto.SysUserDto;
 import com.github.fanzezhen.common.security.util.SecurityUtil;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author zezhen.fan
@@ -36,8 +38,6 @@ public class UserController extends BaseController {
     private SysUserServiceFacade sysUserServiceFacade;
     @Resource
     private SysRoleServiceFacade sysRoleServiceFacade;
-    @Resource
-    private SysUserRoleServiceFacade sysUserRoleServiceFacade;
     @Resource
     private SysPermissionServiceFacade sysPermissionServiceFacade;
 
@@ -147,8 +147,8 @@ public class UserController extends BaseController {
 
     @PostMapping("/role/del/batch")
     @ResponseBody
-    public ResponseData roleDelBatch(@RequestParam(value = "idList") List<String> idList) {
-        return ResponseData.success();
+    public ResponseData roleDelBatch(@RequestBody @NotNull Set<String> idList) {
+        return ResponseData.success(sysRoleServiceFacade.del(idList));
     }
 
     @GetMapping("/rule")
