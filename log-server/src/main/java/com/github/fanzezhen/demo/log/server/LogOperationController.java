@@ -30,10 +30,12 @@ public class LogOperationController {
         return logOperationFacade.addLogOperate(logOperationDto);
     }
 
-    @ApiResponse(responseCode = "2xx", description = "动物园实体对象")
+    @ApiResponse(responseCode = "2", description = "动物园实体对象")
     @ResponseBody
     @GetMapping("/test")
-    public boolean record() {
+    public boolean test(@RequestParam(required = false, defaultValue = "ii") String id
+//            , @RequestBody LogOperationDto logOperationDto
+    ) {
         return true;
     }
 }

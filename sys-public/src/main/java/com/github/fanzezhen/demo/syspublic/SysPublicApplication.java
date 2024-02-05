@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.syspublic;
 
-import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
+import com.github.fanzezhen.common.core.config.EnableCoreConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
 import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @author zezhen.fan
  */
-@EnableCommonCoreConfig
+@EnableCoreConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig
 @EnableScheduling

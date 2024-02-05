@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.sysweb;
 
 import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
-import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
+import com.github.fanzezhen.common.core.config.EnableCoreConfig;
 import com.github.fanzezhen.common.security.config.cas.EnableCommonSecurityCasConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
 import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
@@ -23,7 +23,7 @@ import org.springframework.web.client.RestTemplate;
  * @author zezhen.fan
  */
 @EnableCommonLogConfig
-@EnableCommonCoreConfig
+@EnableCoreConfig
 @EnableCommonSecurityCasConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig

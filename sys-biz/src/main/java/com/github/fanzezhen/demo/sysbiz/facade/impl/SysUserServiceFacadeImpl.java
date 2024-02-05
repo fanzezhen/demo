@@ -43,7 +43,7 @@ public class SysUserServiceFacadeImpl implements SysUserServiceFacade {
             queryWrapper.like(SysUser::getUsername, pageDto.getParam().getUsername());
         }
         pageDto.getParam().setUsername(null);
-        queryWrapper.orderByDesc(SysUser::getUpdateTime);
+        queryWrapper.orderByDesc(SysUser::getCreateTime);
         return sysUserService.page(pageDto, queryWrapper).convert(this::toVo);
     }
 

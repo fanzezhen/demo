@@ -12,11 +12,6 @@
     <groupId>com.github.fanzezhen.demo</groupId>
     <artifactId>gateway-server</artifactId>
 
-    <properties>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
-
     <profiles>
         <profile>
             <id>dev</id>
@@ -34,9 +29,9 @@
             </properties>
         </profile>
         <profile>
-            <id>pro</id>
+            <id>prod</id>
             <properties>
-                <profiles.active>pro</profiles.active>
+                <profiles.active>prod</profiles.active>
             </properties>
         </profile>
     </profiles>
@@ -106,4 +101,18 @@
             <artifactId>hutool-core</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

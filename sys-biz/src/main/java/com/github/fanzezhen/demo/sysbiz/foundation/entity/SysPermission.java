@@ -1,9 +1,11 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
+import com.github.fanzezhen.common.mp.model.entity.tenant.BaseTenantGenericEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serial;
 
 /**
  * <p>
@@ -16,7 +18,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Schema(name="SysPermission对象", description="菜单、按钮表")
-public class SysPermission extends BaseEntity {
+public class SysPermission extends BaseTenantGenericEntity {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Schema(name = "上级ID")

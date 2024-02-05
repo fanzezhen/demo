@@ -1,8 +1,8 @@
 package com.github.fanzezhen.demo.logbiz.facade.impl;
 
+import com.github.fanzezhen.common.log.model.dto.ExceptionLogDto;
 import com.github.fanzezhen.demo.logbiz.facade.LogExceptionServiceFacade;
 import com.github.fanzezhen.common.log.foundation.service.ILogExceptionService;
-import com.github.fanzezhen.common.log.model.dto.LogExceptionDto;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +16,7 @@ public class LogExceptionServiceFacadeImpl implements LogExceptionServiceFacade 
     private ILogExceptionService logExceptionService;
 
     @Override
-    public boolean add(LogExceptionDto logExceptionDto) {
+    public boolean add(ExceptionLogDto logExceptionDto) {
         return logExceptionService.save(logExceptionDto);
     }
 }

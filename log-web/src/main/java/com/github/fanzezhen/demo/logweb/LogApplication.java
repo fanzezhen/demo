@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.logweb;
 
-import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
+import com.github.fanzezhen.common.core.config.EnableCoreConfig;
 import com.github.fanzezhen.common.exception.config.EnableCommonExceptionConfig;
 import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
@@ -22,7 +22,7 @@ import org.springframework.web.client.RestTemplate;
  * @author zezhen.fan
  */
 @EnableCommonLogConfig
-@EnableCommonCoreConfig
+@EnableCoreConfig
 @EnableCommonExceptionConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig

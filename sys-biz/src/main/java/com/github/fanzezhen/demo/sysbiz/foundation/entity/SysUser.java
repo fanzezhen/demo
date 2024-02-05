@@ -1,10 +1,11 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
+import com.github.fanzezhen.common.mp.model.entity.tenant.BaseTenantGenericEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 
 /**
@@ -18,7 +19,8 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Schema(name="SysUser对象", description="系统用户表")
-public class SysUser extends BaseEntity {
+public class SysUser extends BaseTenantGenericEntity {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Schema(name = "用户名")

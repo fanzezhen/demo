@@ -1,6 +1,7 @@
 package com.github.fanzezhen.demo.logbiz.facade;
 
-import com.github.fanzezhen.common.log.model.dto.LogExceptionDto;
+
+import com.github.fanzezhen.common.log.model.dto.ExceptionLogDto;
 
 /**
  * @author zezhen.fan
@@ -12,5 +13,5 @@ public interface LogExceptionServiceFacade {
      * @param logExceptionDto 异常日志信息
      * @return 布尔
      */
-    boolean add(LogExceptionDto logExceptionDto);
+    boolean add(ExceptionLogDto logExceptionDto);
 }

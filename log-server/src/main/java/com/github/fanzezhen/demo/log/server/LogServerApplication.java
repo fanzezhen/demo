@@ -1,24 +1,26 @@
 package com.github.fanzezhen.demo.log.server;
 
-import com.github.fanzezhen.common.core.config.EnableCommonCoreConfig;
+import com.github.fanzezhen.common.all.EnableAllConfig;
+import com.github.fanzezhen.common.core.config.EnableCoreConfig;
 import com.github.fanzezhen.common.exception.config.EnableCommonExceptionConfig;
-import com.github.fanzezhen.common.log.config.EnableCommonLogConfig;
 import com.github.fanzezhen.common.swagger.config.EnableCommonSwaggerConfig;
 import com.github.fanzezhen.common.web.config.EnableCommonWebConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @author zezhen.fan
  */
-@EnableCommonLogConfig
-@EnableCommonCoreConfig
+@EnableWebMvc
+@EnableAllConfig
 @EnableCommonExceptionConfig
 @EnableCommonSwaggerConfig
 @EnableCommonWebConfig

@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.sysbiz.foundation.entity;
 
-import com.github.fanzezhen.common.mp.model.entity.BaseEntity;
+import com.github.fanzezhen.common.mp.model.entity.tenant.BaseTenantGenericEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Schema(name="SysRolePermission对象", description="角色权限关联表")
-public class SysRolePermission extends BaseEntity {
+public class SysRolePermission extends BaseTenantGenericEntity {
     private static final long serialVersionUID = 1L;
 
     @Schema(name = "角色ID")

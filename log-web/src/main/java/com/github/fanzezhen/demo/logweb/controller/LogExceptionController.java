@@ -2,7 +2,7 @@ package com.github.fanzezhen.demo.logweb.controller;
 
 
 import com.github.fanzezhen.demo.logbiz.facade.LogExceptionServiceFacade;
-import com.github.fanzezhen.common.log.model.dto.LogExceptionDto;
+import com.github.fanzezhen.common.log.model.dto.ExceptionLogDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,7 @@ public class LogExceptionController {
 
     @ResponseBody
     @PostMapping("/add")
-    public boolean add(LogExceptionDto logExceptionDto) {
+    public boolean add(ExceptionLogDto logExceptionDto) {
         return logExceptionServiceFacade.add(logExceptionDto);
     }
 

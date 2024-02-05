@@ -29,55 +29,53 @@
             </properties>
         </profile>
         <profile>
-            <id>pro</id>
+            <id>prod</id>
             <properties>
-                <profiles.active>pro</profiles.active>
+                <profiles.active>prod</profiles.active>
             </properties>
         </profile>
     </profiles>
-
-    <properties>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.github.fanzezhen.demo</groupId>
             <artifactId>log-biz</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-sentinel</artifactId>
+            <groupId>com.github.fanzezhen</groupId>
+            <artifactId>common-all</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.fanzezhen</groupId>-->
+<!--            <artifactId>common-sentinel</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.fanzezhen</groupId>
+            <artifactId>common-spring-doc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-swagger</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
+            <groupId>com.github.fanzezhen</groupId>
             <artifactId>common-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
+            <groupId>com.github.fanzezhen</groupId>
             <artifactId>common-exception</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.fanzezhen.common</groupId>
-            <artifactId>common-log</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -123,26 +121,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.github.fanzezhen.demo.logweb.LogApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <version>${org.springframework.boot.version}</version>
             </plugin>
         </plugins>
     </build>

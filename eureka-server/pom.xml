@@ -7,7 +7,6 @@
         <groupId>com.github.fanzezhen</groupId>
         <version>3.0.0</version>
     </parent>
-    <groupId>com.github.fanzezhen.demo</groupId>
     <artifactId>eureka-server</artifactId>
     <name>eureka-server</name>
     <description>Demo project for Spring Boot Eureka</description>
@@ -30,15 +29,12 @@
             </properties>
         </profile>
         <profile>
-            <id>pro</id>
+            <id>prod</id>
             <properties>
-                <profiles.active>pro</profiles.active>
+                <profiles.active>prod</profiles.active>
             </properties>
         </profile>
     </profiles>
-
-    <properties>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -84,26 +80,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.github.fanzezhen.demo.eurekaserver.EurekaServerApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <version>${org.springframework.boot.version}</version>
             </plugin>
         </plugins>
     </build>
