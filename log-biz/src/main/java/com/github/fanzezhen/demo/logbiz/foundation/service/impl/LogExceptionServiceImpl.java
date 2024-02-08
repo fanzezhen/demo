@@ -1,9 +1,9 @@
 package com.github.fanzezhen.demo.logbiz.foundation.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.fanzezhen.common.mp.interceptor.foundation.entity.LogException;
-import com.github.fanzezhen.common.mp.interceptor.foundation.mapper.LogExceptionMapper;
-import com.github.fanzezhen.common.mp.interceptor.foundation.service.ILogExceptionService;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogException;
+import com.github.fanzezhen.demo.logbiz.foundation.mapper.LogExceptionMapper;
+import com.github.fanzezhen.demo.logbiz.foundation.service.ILogExceptionService;
 import org.springframework.stereotype.Service;
 
 /**

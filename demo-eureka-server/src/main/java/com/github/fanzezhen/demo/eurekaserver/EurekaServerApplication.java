@@ -1,6 +1,6 @@
 package com.github.fanzezhen.demo.eurekaserver;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +29,7 @@ public class EurekaServerApplication {
                 "\\/\\____/\\ \\____/\\ \\____\\ \\____\\ \\____\\/\\____/\\/\\____/\n" +
                 " \\/___/  \\/___/  \\/____/\\/____/\\/____/\\/___/  \\/___/ \n");
         Environment env = application.getEnvironment();
-        String ip = StrUtil.EMPTY;
+        String ip = CharSequenceUtil.EMPTY;
         try {
             ip = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
@@ -37,7 +37,7 @@ public class EurekaServerApplication {
         }
         String port = env.getProperty("server.port");
         String path = env.getProperty("server.servlet.context-path");
-        if (StrUtil.isEmpty(path)) {
+        if (CharSequenceUtil.isEmpty(path)) {
             path = "";
         }
         log.info("\n----------------------------------------------------------\n\t" +

@@ -7,7 +7,7 @@
         <groupId>com.github.fanzezhen</groupId>
         <version>3.0.0</version>
     </parent>
-    <artifactId>eureka-server</artifactId>
+    <artifactId>demo-eureka-server</artifactId>
     <name>eureka-server</name>
     <description>Demo project for Spring Boot Eureka</description>
     <packaging>jar</packaging>

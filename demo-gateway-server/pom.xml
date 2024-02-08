@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.fanzezhen.demo</groupId>
-    <artifactId>gateway-server</artifactId>
+    <artifactId>demo-gateway-server</artifactId>
 
     <profiles>
         <profile>

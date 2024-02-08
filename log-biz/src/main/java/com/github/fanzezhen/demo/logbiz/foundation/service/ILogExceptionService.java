@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.logbiz.foundation.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.github.fanzezhen.common.mp.interceptor.foundation.entity.LogException;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogException;
 
 /**
  * <p>

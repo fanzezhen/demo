@@ -1,6 +1,7 @@
 package com.github.fanzezhen.demo.logbiz.facade;
 
-import com.github.fanzezhen.common.log.model.dto.LogOperationDto;
+
+import com.github.fanzezhen.demo.logbiz.model.dto.LogOperationDto;
 
 /**
  * @author zezhen.fan

@@ -1,7 +1,8 @@
 package com.github.fanzezhen.demo.logbiz.facade;
 
-import com.github.fanzezhen.common.log.foundation.entity.LogOperation;
-import com.github.fanzezhen.common.log.foundation.entity.LogOperationDetail;
+
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogOperation;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogOperationDetail;
 
 import java.util.Collection;
 

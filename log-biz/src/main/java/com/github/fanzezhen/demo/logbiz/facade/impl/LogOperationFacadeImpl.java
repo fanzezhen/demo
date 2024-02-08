@@ -1,10 +1,10 @@
 package com.github.fanzezhen.demo.logbiz.facade.impl;
 
 import com.github.fanzezhen.demo.logbiz.facade.LogOperationFacade;
-import com.github.fanzezhen.common.log.foundation.entity.LogOperation;
-import com.github.fanzezhen.common.log.foundation.entity.LogOperationDetail;
-import com.github.fanzezhen.common.log.foundation.service.ILogOperationDetailService;
-import com.github.fanzezhen.common.log.foundation.service.ILogOperationService;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogOperation;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogOperationDetail;
+import com.github.fanzezhen.demo.logbiz.foundation.service.ILogOperationDetailService;
+import com.github.fanzezhen.demo.logbiz.foundation.service.ILogOperationService;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.Resource;

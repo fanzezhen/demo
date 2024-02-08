@@ -2,7 +2,6 @@ package com.github.fanzezhen.demo.sysbiz.remote;
 
 import com.github.fanzezhen.common.core.model.response.ActionResult;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**

@@ -1,7 +1,7 @@
 package com.github.fanzezhen.demo.logbiz.foundation.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.github.fanzezhen.common.mp.interceptor.foundation.entity.LogOperationDetail;
+import com.github.fanzezhen.demo.logbiz.foundation.entity.LogOperationDetail;
 
 /**
  * <p>

@@ -67,8 +67,8 @@
     </build>
 
     <modules>
-        <module>eureka-server</module>
-        <module>gateway-server</module>
+        <module>demo-eureka-server</module>
+        <module>demo-gateway-server</module>
         <module>log-biz</module>
         <module>log-server</module>
         <module>log-web</module>
