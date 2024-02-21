@@ -1,7 +1,9 @@
 package com.github.fanzezhen.demo.lowcode.maginapi;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.fanzezhen.common.core.model.response.ActionResult;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.ssssssss.magicapi.core.context.RequestEntity;
 import org.ssssssss.magicapi.core.interceptor.ResultProvider;
@@ -36,7 +38,9 @@ public class MagicApiResultProvider implements ResultProvider {
     @Override
     public Object buildResult(RequestEntity requestEntity, int code, String message, Object data) {
         // 如果对分页格式有要求的话，可以对data的类型进行判断，进而返回不同的格式
-        return ActionResult.success(data);
+        ActionResult<Object> result = ActionResult.success(data);
+        MDC.put("接口返回结果", JSON.toJSONString(result));
+        return result;
     }
 
     /**
